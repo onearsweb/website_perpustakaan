@@ -1,1 +1,0 @@
-disini berisi view dan query pengiriman php

@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <p>P</p>
+    <a href="/website_perpustakaan/pinjam">Pinjam Buku</a>
+    <p><a href="/website_perpustakaan/pengembalian">Pengembalian Buku</a></p>
 </body>
 </html>

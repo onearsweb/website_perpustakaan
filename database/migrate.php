@@ -20,7 +20,7 @@ CREATE TABLE `admin` (
   `password` varchar(250) NOT NULL,
   `jk` enum('pria','wanita') NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 CREATE TABLE `anggota` (
   `nim` varchar(11) NOT NULL,
@@ -29,7 +29,7 @@ CREATE TABLE `anggota` (
   `alamat` text NOT NULL,
   `no_tlp` varchar(17) NOT NULL,
   PRIMARY KEY (`nim`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 CREATE TABLE `buku` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -38,7 +38,7 @@ CREATE TABLE `buku` (
   `stok` int NOT NULL,
   `status` enum('Tersedia','Kosong') NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 CREATE TABLE `pinjam` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -54,7 +54,7 @@ CREATE TABLE `pinjam` (
   FOREIGN KEY (`id_buku`) REFERENCES `buku`(`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (`id_admin`) REFERENCES `admin`(`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (`nim_anggota`) REFERENCES `anggota`(`nim`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 ";
 
 if ($conn->multi_query($sql)) {
