@@ -5,10 +5,8 @@
 </head>
 <body>
     <h1>Form Peminjaman Buku</h1>
-    <form method="POST" action="">
-        <input type="hidden" name="action" value="pinjam">
-        <label for="id_buku">ID Buku:</label>
-        <input type="text" id="id_buku" name="id_buku" required><br>
+    <form method="POST" action="?action=pinjam">
+        <input type="hidden" name="id_buku" value="<?php echo $_GET['id_buku']; ?>">
         <label for="id_admin">ID Admin:</label>
         <input type="text" id="id_admin" name="id_admin" required><br>
         <label for="nim_anggota">NIM Anggota:</label>

@@ -7,9 +7,8 @@
     <h1>Daftar Buku</h1>
     <ul>
         <?php foreach ($bukuList as $buku): ?>
-            <li><?php echo $buku['judul']; ?> (Stok: <?php echo $buku['stok']; ?>)</li>
+            <li><?php echo $buku['judul']; ?> (Stok: <?php echo $buku['stok']; ?>) - <a href="?action=pinjamForm&id_buku=<?php echo $buku['id']; ?>">Pinjam</a></li>
         <?php endforeach; ?>
     </ul>
-    <a href="?action=form">Pinjam Buku</a>
 </body>
 </html>

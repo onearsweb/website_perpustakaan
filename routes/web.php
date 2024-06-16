@@ -1,16 +1,26 @@
 <?php
-require 'controllers/PeminjamanController.php';
 
-$peminjamanController = new PeminjamanController();
+// Load necessary files and dependencies
+require_once 'database/connection.php';
+require_once 'controllers/PeminjamanController.php';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['action']) && $_POST['action'] == 'pinjam') {
-        $peminjamanController->pinjam();
-    }
-} else {
-    if (isset($_GET['action']) && $_GET['action'] == 'form') {
-        $peminjamanController->pinjamForm();
-    } else {
-        $peminjamanController->index();
-    }
+// Inisialisasi koneksi
+global $conn;
+
+// Mendefinisikan rute menggunakan switch statement
+$action = isset($_GET['action']) ? $_GET['action'] : '';
+
+switch ($action) {
+    case 'pinjamForm':
+        $controller = new PeminjamanController();
+        $controller->pinjamForm();
+        break;
+    case 'pinjam':
+        $controller = new PeminjamanController();
+        $controller->pinjam();
+        break;
+    default:
+        $controller = new PeminjamanController();
+        $controller->index();
+        break;
 }
