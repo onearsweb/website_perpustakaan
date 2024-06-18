@@ -250,7 +250,7 @@
                 <div class="card h-100">
                   <img class="card-img-top" src="../../style/assets/img/book/1.png" alt="Card image cap" />
                   <div class="card-body">
-                    <h5 class="card-title">Tabi</h5>
+                    <h5 class="card-title">All These Wonders: True Stories About Facing..</h5>
                     <p class="card-author"><strong>Penulis:</strong> Nama Penulis</p>
                     <p class="card-category"><strong>Kategori:</strong> Kategori Buku</p>
                     <p class="card-text">Deskripsi singkat tentang buku ini.
@@ -270,7 +270,7 @@
                 <div class="card h-100">
                   <img class="card-img-top" src="../../style/assets/img/book/2.png" alt="Card image cap" />
                   <div class="card-body">
-                    <h5 class="card-title">Tabi</h5>
+                    <h5 class="card-title">The Handbook of Forgotten Skills</h5>
                     <p class="card-author"><strong>Penulis:</strong> Nama Penulis</p>
                     <p class="card-category"><strong>Kategori:</strong> Kategori Buku</p>
                     <p class="card-text">Deskripsi singkat tentang buku ini.
@@ -290,7 +290,7 @@
                 <div class="card h-100">
                   <img class="card-img-top" src="../../style/assets/img/book/3.png" alt="Card image cap" />
                   <div class="card-body">
-                    <h5 class="card-title">Tabi</h5>
+                    <h5 class="card-title">An Unofficial Guide to the World of Studio Ghibli</h5>
                     <p class="card-author"><strong>Penulis:</strong> Nama Penulis</p>
                     <p class="card-category"><strong>Kategori:</strong> Kategori Buku</p>
                     <p class="card-text">Deskripsi singkat tentang buku ini.
@@ -310,7 +310,7 @@
                 <div class="card h-100">
                   <img class="card-img-top" src="../../style/assets/img/book/4.png" alt="Card image cap" />
                   <div class="card-body">
-                    <h5 class="card-title">Tabi</h5>
+                    <h5 class="card-title">essential 20s: 20 essential items for every room</h5>
                     <p class="card-author"><strong>Penulis:</strong> Nama Penulis</p>
                     <p class="card-category"><strong>Kategori:</strong> Kategori Buku</p>
                     <p class="card-text">Deskripsi singkat tentang buku ini.
