@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 14, 2024 at 04:10 PM
+-- Generation Time: Jun 17, 2024 at 10:38 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -33,6 +33,13 @@ CREATE TABLE `admin` (
   `password` varchar(250) NOT NULL,
   `jk` enum('pria','wanita') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `nama`, `password`, `jk`) VALUES
+(12347, 'yafi', '$2y$10$GtMQdCxNIUUKzBE20bnltepdXviv/iAPLkFnLKB7BbEjynFxnP9ym', 'pria');
 
 -- --------------------------------------------------------
 
@@ -119,7 +126,7 @@ ALTER TABLE `pinjam`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12348;
 
 --
 -- AUTO_INCREMENT for table `buku`
