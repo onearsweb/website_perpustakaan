@@ -23,7 +23,8 @@ $query = "SELECT pinjam.id, buku.judul, buku.author, pinjam.tgl_pinjam, pinjam.t
           FROM pinjam
           INNER JOIN buku ON pinjam.id_buku = buku.id
           INNER JOIN anggota ON pinjam.nim_anggota = anggota.nim
-          WHERE anggota.nim = '$user_nim'";
+          WHERE anggota.nim = '$user_nim'
+          ORDER BY pinjam.id";
 
 $result = $conn->query($query);
 
