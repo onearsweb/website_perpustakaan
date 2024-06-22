@@ -1,22 +1,16 @@
 <?php
-require 'database/connection.php';
+  session_start();
+  include('database/connection.php');
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+  $sqlBuku = "SELECT * FROM buku";
+  $result = $conn->query($sqlBuku);
 
-$query = "SELECT * FROM buku";
-$result = $conn->query($query);
+  if ($result->num_rows > 0) {
+      $books = $result->fetch_all(MYSQLI_ASSOC);
+  } else {
+      $books = [];
+  }
 
-$bukuList = array();
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $bukuList[] = $row;
-    }
-} else {
-    // echo "Tidak ada buku tersedia saat ini.";
-}
+  $conn->close();
 
-$conn->close();
-
-// require 'views/coba.php';
+  require 'views/Anggota/daftar_buku.php';

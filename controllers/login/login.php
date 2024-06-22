@@ -1,11 +1,10 @@
 <?php
 session_start();
-include('../../database/connection.php');
+include('database/connection.php');
 
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-// Cek di tabel admin
 $sql = "SELECT * FROM admin WHERE nama='$username' AND password='$password'";
 $result = $conn->query($sql);
 
@@ -20,7 +19,8 @@ if ($result->num_rows > 0) {
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         $_SESSION['user_nim'] = $row['nim'];
-        header("Location: ../../views/anggota/daftar_buku.php");
+        $_SESSION['user_name'] = $row['nama'];
+        header("Location: /website_perpustakaan/buku");
     } else {
         echo "Username atau password salah";
     }

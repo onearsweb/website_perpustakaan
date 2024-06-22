@@ -23,7 +23,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $tgl_kembali = date('Y-m-d');
 
     if ($id_pinjam) {
-        echo kembalikanBuku($id_pinjam, $tgl_kembali, $conn);
+        if (kembalikanBuku($id_pinjam, $tgl_kembali, $conn)) {
+            header("Location: /website_perpustakaan/pengembalian");
+            exit();
+        } else {
+            echo "Gagal melakukan pengembalian buku: " . $conn->error;
+        }
     } else {
         echo "ID pinjam tidak valid.";
     }

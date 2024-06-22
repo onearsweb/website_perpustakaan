@@ -10,9 +10,14 @@ $request = str_replace('/website_perpustakaan', '', $request);
 
 switch ($request) {
     case '/':
-        require 'views/home.php';
+        require 'views/login.php';
         break;
-    case '/pinjam':
+    case '/login':
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            require 'controllers/Login/Login.php'; 
+        }
+        break;
+    case '/buku':
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             require 'controllers/Pinjam/GetControllerPinjam.php'; 
         } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -26,7 +31,7 @@ switch ($request) {
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             require 'controllers/Pengembalian/GetControllerPengembalian.php'; 
         } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            require 'controllers/Pengembalian/PostControllerPinjam.php';
+            require 'controllers/Pengembalian/PostControllerPengembalian.php';
         } else {
             http_response_code(405);
             echo "Method Not Allowed";

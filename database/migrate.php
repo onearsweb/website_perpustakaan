@@ -34,6 +34,10 @@ CREATE TABLE `anggota` (
 CREATE TABLE `buku` (
   `id` int NOT NULL AUTO_INCREMENT,
   `judul` varchar(250) NOT NULL,
+  `author` varchar(50) NOT NULL,
+  `kategori` enum('Fantasi','Seni Budaya', 'Anak Anak', 'Pelajaran') NOT NULL,
+  `deskripsi` text NOT NULL,
+  `gambar` text NOT NULL,
   `rak` enum('A','B','C','D') NOT NULL,
   `stok` int NOT NULL,
   `status` enum('Tersedia','Kosong') NOT NULL,
@@ -43,7 +47,6 @@ CREATE TABLE `buku` (
 CREATE TABLE `pinjam` (
   `id` int NOT NULL AUTO_INCREMENT,
   `id_buku` int NOT NULL,
-  `id_admin` int NOT NULL,
   `nim_anggota` varchar(11) NOT NULL,
   `tgl_pinjam` date NOT NULL,
   `tenggat_pengembalian` date NOT NULL,
@@ -52,7 +55,6 @@ CREATE TABLE `pinjam` (
   `jumlah_pinjam` int NOT NULL,
   PRIMARY KEY (`id`),
   FOREIGN KEY (`id_buku`) REFERENCES `buku`(`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  FOREIGN KEY (`id_admin`) REFERENCES `admin`(`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (`nim_anggota`) REFERENCES `anggota`(`nim`) ON DELETE CASCADE ON UPDATE CASCADE
 );
 ";

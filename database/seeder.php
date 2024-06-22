@@ -6,8 +6,7 @@ if ($conn->connect_error) {
 }
 
 $sqlAdmin = "INSERT INTO admin (nama, password, jk) VALUES 
-    ('Admin1', 'password1', 'pria'),
-    ('Admin2', 'password2', 'wanita')";
+    ('Admin', '12345678', 'pria')";
 
 if ($conn->query($sqlAdmin) === TRUE) {
     echo "Admin records created successfully<br>";
@@ -27,9 +26,11 @@ if ($conn->query($sqlAnggota) === TRUE) {
 }
 
 
-$sqlBuku = "INSERT INTO buku (judul, rak, stok, status) VALUES 
-    ('Buku1', 'A', 10, 'Tersedia'),
-    ('Buku2', 'B', 5, 'Tersedia')";
+$sqlBuku = "INSERT INTO buku (judul, author, kategori, deskripsi, gambar, rak, stok, status) VALUES 
+    ('All These Wonders: True Stories About Facing...', 'Rini', 'Fantasi', 'Deskripsi singkat tentang buku ini.', '1.png', 'A', 10, 'Tersedia'),
+    ('The Handbook of Forgotten Skills', 'Rika', 'Fantasi', 'Deskripsi singkat tentang buku ini.', '2.png', 'B', 10, 'Tersedia'),
+    ('An Unofficial Guide to the World of Studio Ghibli', 'Riza', 'Anak Anak', 'Deskripsi singkat tentang buku ini.', '3.png', 'C', 10, 'Tersedia'),
+    ('essential 20s: 20 essential items for every room', 'Adi', 'Pelajaran', 'Deskripsi singkat tentang buku ini.', '4.png', 'D', 10, 'Tersedia')";
 
 if ($conn->query($sqlBuku) === TRUE) {
     echo "Buku records created successfully<br>";

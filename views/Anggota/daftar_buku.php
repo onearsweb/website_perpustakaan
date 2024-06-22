@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="../../assets/" data-template="vertical-menu-template-free">
+<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="/website_perpustakaan/assets/" data-template="vertical-menu-template-free">
 
 <head>
   <meta charset="utf-8" />
@@ -10,7 +10,7 @@
   <meta name="description" content="" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="../style/assets/img/favicon/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="/website_perpustakaan/style/assets/img/favicon/favicon.ico" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,29 +18,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
 
   <!-- Icons. Uncomment required icon fonts -->
-  <link rel="stylesheet" href="../../style/assets/vendor/fonts/boxicons.css" />
+  <link rel="stylesheet" href="/website_perpustakaan/style/assets/vendor/fonts/boxicons.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 
   <!-- Core CSS -->
-  <link rel="stylesheet" href="../../style/assets/vendor/css/core.css" class="template-customizer-core-css" />
-  <link rel="stylesheet" href="../../style/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-  <link rel="stylesheet" href="../../style/assets/css/demo.css" />
+  <link rel="stylesheet" href="/website_perpustakaan/style/assets/vendor/css/core.css" class="template-customizer-core-css" />
+  <link rel="stylesheet" href="/website_perpustakaan/style/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+  <link rel="stylesheet" href="/website_perpustakaan/style/assets/css/demo.css" />
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
   <!-- Vendors CSS -->
-  <link rel="stylesheet" href="../../style/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+  <link rel="stylesheet" href="/website_perpustakaan/style/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
-  <link rel="stylesheet" href="../../style/assets/vendor/libs/apex-charts/apex-charts.css" />
+  <link rel="stylesheet" href="/website_perpustakaan/style/assets/vendor/libs/apex-charts/apex-charts.css" />
 
   <!-- Page CSS -->
 
   <!-- Helpers -->
-  <script src="../../style/assets/vendor/js/helpers.js"></script>
+  <script src="/website_perpustakaan/style/assets/vendor/js/helpers.js"></script>
 
   <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
   <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-  <script src="../../style/assets/js/config.js"></script>
+  <script src="/website_perpustakaan/style/assets/js/config.js"></script>
 </head>
 <style>
 .card {
@@ -118,14 +118,14 @@
         <ul class="menu-inner py-1">
           <!-- Dashboard -->
           <li class="menu-item active">
-            <a href="daftar_buku.php" class="menu-link">
+            <a href="/website_perpustakaan/buku" class="menu-link">
               <i class="menu-icon tf-icons bx bx-detail"></i>
               <div data-i18n="Analytics">Daftar Buku</div>
             </a>
           </li>
 
           <li class="menu-item">
-            <a href="Pengembalian.php" class="menu-link">
+            <a href="/website_perpustakaan/pengembalian" class="menu-link">
               <i class="menu-icon tf-icons bx bx-dock-top"></i>
               <div data-i18n="Tables">Pengembalian</div>
             </a>
@@ -168,7 +168,7 @@
               <li class="nav-item navbar-dropdown dropdown-user dropdown">
                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                   <div class="avatar avatar-online">
-                    <img src="../../style/assets/img/avatars/2.png" alt class="w-px-40 h-auto rounded-circle" />
+                    <img src="/website_perpustakaan/style/assets/img/avatars/2.png" alt class="w-px-40 h-auto rounded-circle" />
                   </div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
@@ -177,11 +177,11 @@
                       <div class="d-flex">
                         <div class="flex-shrink-0 me-3">
                           <div class="avatar avatar-online">
-                            <img src="../../style/assets/img/avatars/2.png" alt class="w-px-40 h-auto rounded-circle" />
+                            <img src="/website_perpustakaan/style/assets/img/avatars/2.png" alt class="w-px-40 h-auto rounded-circle" />
                           </div>
                         </div>
                         <div class="flex-grow-1">
-                          <span class="fw-semibold d-block">Wilda</span>
+                          <span class="fw-semibold d-block"> <?php echo $_SESSION['user_name'];?> </span>
                           <small class="text-muted">Anggota</small>
                         </div>
                       </div>
@@ -206,7 +206,7 @@
                     <div class="dropdown-divider"></div>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="auth-login-basic.html">
+                    <a class="dropdown-item" href="/website_perpustakaan/controllers/Login/Logout.php">
                       <i class="bx bx-power-off me-2"></i>
                       <span class="align-middle">Log Out</span>
                     </a>
@@ -230,7 +230,7 @@
                 <div class="d-flex align-items-end row">
                   <div class="col-sm-7">
                     <div class="card-body">
-                      <h5 class="card-title">Halo Wilda,</h5>
+                      <h5 class="card-title">Halo <?php echo $_SESSION['user_name'];?>,</h5>
                       <p class="fs-4 mb-4">
                       <span class="fw-bold">Temukan Buku yang Akan Kamu Baca Disini!</span>
                       </p>
@@ -238,7 +238,7 @@
                   </div>
                   <div class="col-sm-5 text-center text-sm-left">
                     <div class="card-body pb-0 px-0 px-md-4">
-                      <img src="../../style/assets/img/backgrounds/buku.png" height="140" alt="View Badge User" data-app-dark-img="backgrounds/book.png" data-app-light-img="backgrounds/book.png" />
+                      <img src="/website_perpustakaan/style/assets/img/backgrounds/buku.png" height="140" alt="View Badge User" data-app-dark-img="backgrounds/book.png" data-app-light-img="backgrounds/book.png" />
                     </div>
                   </div>
                 </div>
@@ -246,279 +246,70 @@
             </div>
 
             <div class="row mb-5">
-              <div class="col-md-3 mb-3">
-                <div class="card h-100">
-                  <img class="card-img-top" src="../../style/assets/img/book/1.png" alt="Card image cap" />
-                  <div class="card-body">
-                    <h5 class="card-title">All These Wonders: True Stories About Facing..</h5>
-                    <p class="card-author"><strong>Penulis:</strong> Nama Penulis</p>
-                    <p class="card-category"><strong>Kategori:</strong> Kategori Buku</p>
-                    <p class="card-text">Deskripsi singkat tentang buku ini.
-                      <a href="detail_buku.php" class="detail-link">Detail Buku</a>
-                    </p>
-                    <div class="d-flex justify-content-between">
-                      <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#pinjamModal">Pinjam</button>
-                      <button type="button" class="btn btn-primary btn-sm" id="wishlistButton">
-                        <i class="fa-solid fa-book"></i> Wishlist
-                      </button>
+              <?php foreach ($books as $book): ?>
+                <div class="col-md-3 mb-3">
+                  <div class="card h-100">
+                    <img class="card-img-top" src="/website_perpustakaan/style/assets/img/book/<?php echo htmlspecialchars($book['gambar']); ?>" alt="<?php echo htmlspecialchars($book['gambar']); ?>" />
+                    <div class="card-body">
+                      <h5 class="card-title"><?php echo htmlspecialchars($book['judul']); ?></h5>
+                      <p class="card-author"><strong>Penulis:</strong> <?php echo htmlspecialchars($book['author']); ?></p>
+                      <p class="card-category"><strong>Kategori:</strong> <?php echo htmlspecialchars($book['kategori']); ?></p>
+                      <p class="card-stok"><strong>Stok: </strong><?php echo htmlspecialchars($book['stok']); ?>
+                      <p class="card-text"><?php echo htmlspecialchars($book['deskripsi']); ?>
+                        <a href="detail_buku.php?id=<?php echo $book['id']; ?>" class="detail-link">Detail Buku</a>
+                      </p>
+                      <div class="d-flex justify-content-between">
+                        <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#pinjamModal<?php echo $book['id']; ?>">Pinjam</button>
+                        <button type="button" class="btn btn-primary btn-sm" id="wishlistButton">
+                          <i class="fa-solid fa-book"></i> Wishlist
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              <div class="col-md-3 mb-3">
-                <div class="card h-100">
-                  <img class="card-img-top" src="../../style/assets/img/book/2.png" alt="Card image cap" />
-                  <div class="card-body">
-                    <h5 class="card-title">The Handbook of Forgotten Skills</h5>
-                    <p class="card-author"><strong>Penulis:</strong> Nama Penulis</p>
-                    <p class="card-category"><strong>Kategori:</strong> Kategori Buku</p>
-                    <p class="card-text">Deskripsi singkat tentang buku ini.
-                      <a href="detail_buku.php" class="detail-link">Detail Buku</a>
-                    </p>
-                    <div class="d-flex justify-content-between">
-                      <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#pinjamModal">Pinjam</button>
-                      <button type="button" class="btn btn-primary btn-sm" id="wishlistButton">
-                        <i class="fa-solid fa-book"></i> Wishlist
-                      </button>
+                <div class="modal fade" id="pinjamModal<?php echo $book['id']; ?>" tabindex="-1" aria-labelledby="pinjamModalLabel<?php echo $book['id']; ?>" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="pinjamModalLabel<?php echo $book['id']; ?>">Pinjam Buku Ini</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <form action="/website_perpustakaan/buku" method="post" id="pinjamForm<?php echo $book['id']; ?>">
+                          <input type="hidden" name="id_buku" value="<?php echo $book['id']; ?>">
+                          <input type="hidden" name="nim_anggota" value="<?php echo $_SESSION['user_nim'];?>">
+                          <div class="mb-3">
+                            <label for="namaBuku<?php echo $book['id']; ?>" class="form-label">Nama Buku</label>
+                            <input type="text" class="form-control" id="namaBuku<?php echo $book['id']; ?>" value="<?php echo htmlspecialchars($book['judul']); ?>" required readonly>
+                          </div>
+                          <div class="mb-3">
+                            <label for="penulisBuku<?php echo $book['id']; ?>" class="form-label">Penulis Buku</label>
+                            <input type="text" class="form-control" id="penulisBuku<?php echo $book['id']; ?>" value="<?php echo htmlspecialchars($book['author']); ?>" required readonly>
+                          </div>
+                          <div class="mb-3">
+                            <label for="tanggalPinjam<?php echo $book['id']; ?>" class="form-label">Tanggal Peminjaman</label>
+                            <input type="date" class="form-control" id="tanggalPinjam<?php echo $book['id']; ?>" name="tgl_pinjam" value="<?php echo date('Y-m-d'); ?>" readonly required>
+                          </div>
+                          <div class="mb-3">
+                            <label for="tanggalKembali<?php echo $book['id']; ?>" class="form-label">Tanggal Pengembalian</label>
+                            <input type="date" class="form-control" id="tanggalKembali<?php echo $book['id']; ?>" name="tenggat_pengembalian" required>
+                          </div>
+                          <div class="mb-3">
+                            <label for="jumlahPinjam<?php echo $book['id']; ?>" class="form-label">Jumlah Pinjam</label>
+                            <input type="number" class="form-control" id="jumlahPinjam<?php echo $book['id']; ?>" name="jumlah_pinjam" required min="1">
+                          </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                        <button type="submit" class="btn btn-primary" form="pinjamForm<?php echo $book['id']; ?>">Pinjam</button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-
-              <div class="col-md-3 mb-3">
-                <div class="card h-100">
-                  <img class="card-img-top" src="../../style/assets/img/book/3.png" alt="Card image cap" />
-                  <div class="card-body">
-                    <h5 class="card-title">An Unofficial Guide to the World of Studio Ghibli</h5>
-                    <p class="card-author"><strong>Penulis:</strong> Nama Penulis</p>
-                    <p class="card-category"><strong>Kategori:</strong> Kategori Buku</p>
-                    <p class="card-text">Deskripsi singkat tentang buku ini.
-                      <a href="detail_buku.php" class="detail-link">Detail Buku</a>
-                    </p>
-                    <div class="d-flex justify-content-between">
-                      <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#pinjamModal">Pinjam</button>
-                      <button type="button" class="btn btn-primary btn-sm" id="wishlistButton">
-                        <i class="fa-solid fa-book"></i> Wishlist
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-3 mb-3">
-                <div class="card h-100">
-                  <img class="card-img-top" src="../../style/assets/img/book/4.png" alt="Card image cap" />
-                  <div class="card-body">
-                    <h5 class="card-title">essential 20s: 20 essential items for every room</h5>
-                    <p class="card-author"><strong>Penulis:</strong> Nama Penulis</p>
-                    <p class="card-category"><strong>Kategori:</strong> Kategori Buku</p>
-                    <p class="card-text">Deskripsi singkat tentang buku ini.
-                      <a href="detail_buku.php" class="detail-link">Detail Buku</a>
-                    </p>
-                    <div class="d-flex justify-content-between">
-                      <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#pinjamModal">Pinjam</button>
-                      <button type="button" class="btn btn-primary btn-sm" id="wishlistButton">
-                        <i class="fa-solid fa-book"></i> Wishlist
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-3 mb-3">
-                <div class="card h-100">
-                  <img class="card-img-top" src="../../style/assets/img/book/5.png" alt="Card image cap" />
-                  <div class="card-body">
-                    <h5 class="card-title">Tabi</h5>
-                    <p class="card-author"><strong>Penulis:</strong> Nama Penulis</p>
-                    <p class="card-category"><strong>Kategori:</strong> Kategori Buku</p>
-                    <p class="card-text">Deskripsi singkat tentang buku ini.
-                      <a href="detail_buku.php" class="detail-link">Detail Buku</a>
-                    </p>
-                    <div class="d-flex justify-content-between">
-                      <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#pinjamModal">Pinjam</button>
-                      <button type="button" class="btn btn-primary btn-sm" id="wishlistButton">
-                        <i class="fa-solid fa-book"></i> Wishlist
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-3 mb-3">
-                <div class="card h-100">
-                  <img class="card-img-top" src="../../style/assets/img/book/6.png" alt="Card image cap" />
-                  <div class="card-body">
-                    <h5 class="card-title">Tabi</h5>
-                    <p class="card-author"><strong>Penulis:</strong> Nama Penulis</p>
-                    <p class="card-category"><strong>Kategori:</strong> Kategori Buku</p>
-                    <p class="card-text">Deskripsi singkat tentang buku ini.
-                      <a href="detail_buku.php" class="detail-link">Detail Buku</a>
-                    </p>
-                    <div class="d-flex justify-content-between">
-                      <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#pinjamModal">Pinjam</button>
-                      <button type="button" class="btn btn-primary btn-sm" id="wishlistButton">
-                        <i class="fa-solid fa-book"></i> Wishlist
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-3 mb-3">
-                <div class="card h-100">
-                  <img class="card-img-top" src="../../style/assets/img/book/7.png" alt="Card image cap" />
-                  <div class="card-body">
-                    <h5 class="card-title">Tabi</h5>
-                    <p class="card-author"><strong>Penulis:</strong> Nama Penulis</p>
-                    <p class="card-category"><strong>Kategori:</strong> Kategori Buku</p>
-                    <p class="card-text">Deskripsi singkat tentang buku ini.
-                      <a href="detail_buku.php" class="detail-link">Detail Buku</a>
-                    </p>
-                    <div class="d-flex justify-content-between">
-                      <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#pinjamModal">Pinjam</button>
-                      <button type="button" class="btn btn-primary btn-sm" id="wishlistButton">
-                        <i class="fa-solid fa-book"></i> Wishlist
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-3 mb-3">
-                <div class="card h-100">
-                  <img class="card-img-top" src="../../style/assets/img/book/8.png" alt="Card image cap" />
-                  <div class="card-body">
-                    <h5 class="card-title">Tabi</h5>
-                    <p class="card-author"><strong>Penulis:</strong> Nama Penulis</p>
-                    <p class="card-category"><strong>Kategori:</strong> Kategori Buku</p>
-                    <p class="card-text">Deskripsi singkat tentang buku ini.
-                      <a href="detail_buku.php" class="detail-link">Detail Buku</a>
-                    </p>
-                    <div class="d-flex justify-content-between">
-                      <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#pinjamModal">Pinjam</button>
-                      <button type="button" class="btn btn-primary btn-sm" id="wishlistButton">
-                        <i class="fa-solid fa-book"></i> Wishlist
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-3 mb-3">
-                <div class="card h-100">
-                  <img class="card-img-top" src="../../style/assets/img/book/9.png" alt="Card image cap" />
-                  <div class="card-body">
-                    <h5 class="card-title">Tabi</h5>
-                    <p class="card-author"><strong>Penulis:</strong> Nama Penulis</p>
-                    <p class="card-category"><strong>Kategori:</strong> Kategori Buku</p>
-                    <p class="card-text">Deskripsi singkat tentang buku ini.
-                      <a href="detail_buku.php" class="detail-link">Detail Buku</a>
-                    </p>
-                    <div class="d-flex justify-content-between">
-                      <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#pinjamModal">Pinjam</button>
-                      <button type="button" class="btn btn-primary btn-sm" id="wishlistButton">
-                        <i class="fa-solid fa-book"></i> Wishlist
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-3 mb-3">
-                <div class="card h-100">
-                  <img class="card-img-top" src="../../style/assets/img/book/10.png" alt="Card image cap" />
-                  <div class="card-body">
-                    <h5 class="card-title">Tabi</h5>
-                    <p class="card-author"><strong>Penulis:</strong> Nama Penulis</p>
-                    <p class="card-category"><strong>Kategori:</strong> Kategori Buku</p>
-                    <p class="card-text">Deskripsi singkat tentang buku ini.
-                      <a href="detail_buku.php" class="detail-link">Detail Buku</a>
-                    </p>
-                    <div class="d-flex justify-content-between">
-                      <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#pinjamModal">Pinjam</button>
-                      <button type="button" class="btn btn-primary btn-sm" id="wishlistButton">
-                        <i class="fa-solid fa-book"></i> Wishlist
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-3 mb-3">
-                <div class="card h-100">
-                  <img class="card-img-top" src="../../style/assets/img/book/11.png" alt="Card image cap" />
-                  <div class="card-body">
-                    <h5 class="card-title">Tabi</h5>
-                    <p class="card-author"><strong>Penulis:</strong> Nama Penulis</p>
-                    <p class="card-category"><strong>Kategori:</strong> Kategori Buku</p>
-                    <p class="card-text">Deskripsi singkat tentang buku ini.
-                      <a href="detail_buku.php" class="detail-link">Detail Buku</a>
-                    </p>
-                    <div class="d-flex justify-content-between">
-                      <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#pinjamModal">Pinjam</button>
-                      <button type="button" class="btn btn-primary btn-sm" id="wishlistButton">
-                        <i class="fa-solid fa-book"></i> Wishlist
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3 mb-3">
-                <div class="card h-100">
-                  <img class="card-img-top" src="../../style/assets/img/book/12.png" alt="Card image cap" />
-                  <div class="card-body">
-                    <h5 class="card-title">Tabi</h5>
-                    <p class="card-author"><strong>Penulis:</strong> Nama Penulis</p>
-                    <p class="card-category"><strong>Kategori:</strong> Kategori Buku</p>
-                    <p class="card-text">Deskripsi singkat tentang buku ini.
-                    </p>
-                    <div class="d-flex justify-content-between">
-                      <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#pinjamModal">Pinjam</button>
-                      <button type="button" class="btn btn-primary btn-sm" id="wishlistButton">
-                        <i class="fa-solid fa-book"></i> Wishlist
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Modal -->
-              <div class="modal fade" id="pinjamModal" tabindex="-1" aria-labelledby="pinjamModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="pinjamModalLabel">Pinjam Buku Ini</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <form action="" method="" id="pinjamForm">
-                        <div class="mb-3">
-                          <label for="namaBuku" class="form-label">Nama Buku</label>
-                          <input type="text" class="form-control" id="namaBuku" value="Tabi" required readonly>
-                        </div>
-                        <div class="mb-3">
-                          <label for="penulisBuku" class="form-label">Penulis Buku</label>
-                          <input type="text" class="form-control" id="penulisBuku" value="Marchella" required readonly>
-                        </div>
-                        <div class="mb-3">
-                          <label for="tanggalPinjam" class="form-label">Tanggal Peminjaman</label>
-                          <input type="date" class="form-control" id="tanggalPinjam" required>
-                        </div>
-                        <div class="mb-3">
-                          <label for="tanggalKembali" class="form-label">Tanggal Pengembalian</label>
-                          <input type="date" class="form-control" id="tanggalKembali" required>
-                        </div>
-                      </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                      <button type="button" class="btn btn-primary" id="submitPinjam">Pinjam</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Modal -->
+              <?php endforeach; ?>
+            </div>
 
               <div class="content-backdrop fade"></div>
             </div>
@@ -533,22 +324,22 @@
       <!-- / Layout wrapper -->
       <!-- Core JS -->
       <!-- build:js assets/vendor/js/core.js -->
-      <script src="../../style/assets/vendor/libs/jquery/jquery.js"></script>
-      <script src="../../style/assets/vendor/libs/popper/popper.js"></script>
-      <script src="../../style/assets/vendor/js/bootstrap.js"></script>
-      <script src="../../style/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+      <script src="/website_perpustakaan/style/assets/vendor/libs/jquery/jquery.js"></script>
+      <script src="/website_perpustakaan/style/assets/vendor/libs/popper/popper.js"></script>
+      <script src="/website_perpustakaan/style/assets/vendor/js/bootstrap.js"></script>
+      <script src="/website_perpustakaan/style/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 
-      <script src="../../style/assets/vendor/js/menu.js"></script>
+      <script src="/website_perpustakaan/style/assets/vendor/js/menu.js"></script>
       <!-- endbuild -->
 
       <!-- Vendors JS -->
-      <script src="../../style/assets/vendor/libs/apex-charts/apexcharts.js"></script>
+      <script src="/website_perpustakaan/style/assets/vendor/libs/apex-charts/apexcharts.js"></script>
 
       <!-- Main JS -->
-      <script src="../../style/assets/js/main.js"></script>
+      <script src="/website_perpustakaan/style/assets/js/main.js"></script>
 
       <!-- Page JS -->
-      <script src="../../style/assets/js/dashboards-analytics.js"></script>
+      <script src="/website_perpustakaan/style/assets/js/dashboards-analytics.js"></script>
 
       <!-- Place this tag in your head or just before your close body tag. -->
       <script async defer src="https://buttons.github.io/buttons.js"></script>

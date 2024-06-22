@@ -4,7 +4,7 @@
   class="light-style layout-menu-fixed"
   dir="ltr"
   data-theme="theme-default"
-  data-assets-path="../../assets/"
+  data-assets-path="/website_perpustakaan/assets/"
   data-template="vertical-menu-template-free"
 >
   <head>
@@ -19,7 +19,7 @@
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../../style/assets/img/favicon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/website_perpustakaan/style/assets/img/favicon/favicon.ico" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,28 +30,28 @@
     />
 
     <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="../../style/assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="/website_perpustakaan/style/assets/vendor/fonts/boxicons.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="../../style/assets/vendor/css/core.css" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="../../style/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="../../style/assets/css/demo.css" />
+    <link rel="stylesheet" href="/website_perpustakaan/style/assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="/website_perpustakaan/style/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="/website_perpustakaan/style/assets/css/demo.css" />
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="../../style/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="/website_perpustakaan/style/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
     <!-- Page CSS -->
 
     <!-- Helpers -->
-    <script src="../../style/assets/vendor/js/helpers.js"></script>
+    <script src="/website_perpustakaan/style/assets/vendor/js/helpers.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="../../style/assets/js/config.js"></script>
+    <script src="/website_perpustakaan/style/assets/js/config.js"></script>
   </head>
 
   <body>
@@ -131,14 +131,14 @@
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
             <li class="menu-item ">
-            <a href="daftar_buku.php" class="menu-link">
+            <a href="/website_perpustakaan/buku" class="menu-link">
               <i class="menu-icon tf-icons bx bx-detail"></i>
               <div data-i18n="Analytics">Daftar Buku</div>
             </a>
           </li>
 
           <li class="menu-item active">
-            <a href="Pengembalian.php" class="menu-link">
+            <a href="/website_perpustakaan/pengembalian" class="menu-link">
               <i class="menu-icon tf-icons bx bx-dock-top"></i>
               <div data-i18n="Tables">Pengembalian</div>
             </a>
@@ -188,7 +188,7 @@
                 <li class="nav-item navbar-dropdown dropdown-user dropdown">
                   <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                      <img src="../../style/assets/img/avatars/2.png" alt class="w-px-40 h-auto rounded-circle" />
+                      <img src="/website_perpustakaan/style/assets/img/avatars/2.png" alt class="w-px-40 h-auto rounded-circle" />
                     </div>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
@@ -197,11 +197,11 @@
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
-                              <img src="../../style/assets/img/avatars/2.png" alt class="w-px-40 h-auto rounded-circle" />
+                              <img src="/website_perpustakaan/style/assets/img/avatars/2.png" alt class="w-px-40 h-auto rounded-circle" />
                             </div>
                           </div>
                           <div class="flex-grow-1">
-                            <span class="fw-semibold d-block">wildaa</span>
+                            <span class="fw-semibold d-block"><?php echo $_SESSION['user_name'];?></span>
                             <small class="text-muted">Anggota</small>
                           </div>
                         </div>
@@ -226,7 +226,7 @@
                       <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="auth-login-basic.html">
+                      <a class="dropdown-item" href="/website_perpustakaan/controllers/Login/Logout.php">
                         <i class="bx bx-power-off me-2"></i>
                         <span class="align-middle">Log Out</span>
                       </a>
@@ -258,43 +258,28 @@
                         <th>Tanggal Pinjam</th>
                         <th>Tenggat</th>
                         <th>Di Kembalikan</th>
+                        <th>Status</th>
                         <th>Actions</th>
                       </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
+                    <?php foreach ($pinjamList as $index => $pinjam) : ?>
                       <tr>
-                        <td>1</td>
-                        <td>Harry Potter</td>
-                        <td>J.K. Rowling</td>
-                        <td>2024-06-01</td>
-                        <td>2024-06-15</td>
-                        <td></td>
+                      <td><?php echo $index + 1; ?></td>
+                        <td><?php echo $pinjam['judul']; ?></td>
+                        <td><?php echo $pinjam['author']; ?></td>
+                        <td><?php echo $pinjam['tgl_pinjam']; ?></td>
+                        <td><?php echo $pinjam['tenggat_pengembalian']; ?></td>
+                        <td><?php echo $pinjam['tgl_kembali']; ?></td>
+                        <td><?php echo $pinjam['status']; ?></td>
                         <td>
-                          <button type="button" class="btn btn-primary" id="kembalikanBtn">Kembalikan</button>
+                          <form action="/website_perpustakaan/pengembalian" method="post">
+                            <input type="hidden" name="id_pinjam" value="<?php echo $pinjam['id']; ?>">
+                            <button type="submit" class="btn btn-primary" name="kembalikanBtn">Kembalikan</button>
+                          </form>
                         </td>
                       </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>The Great Gatsby</td>
-                        <td>F. Scott Fitzgerald</td>
-                        <td>2024-05-15</td>
-                        <td>2024-05-30</td>
-                        <td></td>
-                        <td>
-                          <button type="button" class="btn btn-primary" id="kembalikanBtn">Kembalikan</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>To Kill a Mockingbird</td>
-                        <td>Harper Lee</td>
-                        <td>2024-06-10</td>
-                        <td>2024-06-25</td>
-                        <td></td>
-                        <td>
-                          <button type="button" class="btn btn-primary" id="kembalikanBtn">Kembalikan</button>
-                        </td>
-                      </tr>
+                    <?php endforeach; ?>
                     </tbody>
                   </table>
                 </div>
@@ -334,18 +319,18 @@
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
-    <script src="../../style/assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="../../style/assets/vendor/libs/popper/popper.js"></script>
-    <script src="../../style/assets/vendor/js/bootstrap.js"></script>
-    <script src="../../style/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="/website_perpustakaan/style/assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="/website_perpustakaan/style/assets/vendor/libs/popper/popper.js"></script>
+    <script src="/website_perpustakaan/style/assets/vendor/js/bootstrap.js"></script>
+    <script src="/website_perpustakaan/style/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 
-    <script src="../../style/assets/vendor/js/menu.js"></script>
+    <script src="/website_perpustakaan/style/assets/vendor/js/menu.js"></script>
     <!-- endbuild -->
 
     <!-- Vendors JS -->
 
     <!-- Main JS -->
-    <script src="../../style/assets/js/main.js"></script>
+    <script src="/website_perpustakaan/style/assets/js/main.js"></script>
 
     <!-- Page JS -->
 
