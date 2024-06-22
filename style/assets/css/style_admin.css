@@ -1,0 +1,30 @@
+.container-act {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3.8px;
+  }
+
+  .sampul-buku {
+    height: 125px;
+    width: auto;
+  }
+
+  td {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    font-size: 13px;
+  }
+
+  .judul-buku {
+    text-align: center;
+    max-width: 150px;
+
+  }
+
+  .deskripsi-buku {
+    max-width: 1000px;
+    text-align: justify;
+    font-size: 11px;
+  }

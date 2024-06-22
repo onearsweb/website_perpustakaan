@@ -209,7 +209,7 @@
                       <th>Id Pinjam</th>
                       <th>Id Buku</th>
                       <th>Judul Buku</th>
-                      <th>Id Admin</th>
+                      <!-- <th>Id Admin</th> -->
                       <th>Nim Anggota</th>
                       <th>Tanggal Pinjam</th>
                       <th>Tenggat Pengembalian</th>
@@ -227,7 +227,6 @@
                       <td>PM10</td>
                       <td>00001</td>
                       <td>Dikta & Hukum</td>
-                      <td>Admin001</td>
                       <td>17220011</td>
                       <td>01-01-2022</td>
                       <td>05-01-2022</td>
@@ -245,7 +244,6 @@
                       <td>PM10</td>
                       <td>00005</td>
                       <td>Dikta & Hukum</td>
-                      <td>Admin001</td>
                       <td>17220013</td>
                       <td>01-01-2022</td>
                       <td>05-01-2022</td>
@@ -263,7 +261,6 @@
                       <td>PM10</td>
                       <td>00004</td>
                       <td>Dikta & Hukum</td>
-                      <td>Admin001</td>
                       <td>17220012</td>
                       <td>01-01-2022</td>
                       <td>05-01-2022</td>
@@ -281,7 +278,6 @@
                       <td>PM10</td>
                       <td>00001</td>
                       <td>Dikta & Hukum</td>
-                      <td>Admin001</td>
                       <td>17220016</td>
                       <td>01-01-2022</td>
                       <td>05-01-2022</td>
@@ -299,7 +295,6 @@
                       <td>PM10</td>
                       <td>00001</td>
                       <td>Dikta & Hukum</td>
-                      <td>Admin001</td>
                       <td>17220015</td>
                       <td>01-01-2022</td>
                       <td>05-01-2022</td>
