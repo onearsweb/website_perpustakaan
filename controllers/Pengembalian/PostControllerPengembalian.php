@@ -19,8 +19,8 @@ function kembalikanBuku($id_pinjam, $tgl_kembali, $conn) {
             throw new Exception("Gagal mengupdate status pengembalian buku: " . $stmt->error);
         }
 
-        // Fetch the book ID from the loan record
-        $query = "SELECT id_buku FROM pinjam WHERE id = ?";
+        // Fetch the book ID and jumlah_pinjam from the loan record
+        $query = "SELECT id_buku, jumlah_pinjam FROM pinjam WHERE id = ?";
         $stmt = $conn->prepare($query);
         $stmt->bind_param("i", $id_pinjam);
 
@@ -35,10 +35,12 @@ function kembalikanBuku($id_pinjam, $tgl_kembali, $conn) {
 
         $row = $result->fetch_assoc();
         $id_buku = $row['id_buku'];
+        $jumlah_pinjam = $row['jumlah_pinjam'];
 
-        $query = "UPDATE buku SET stok = stok + 1 WHERE id = ?";
+        // Update the book stock
+        $query = "UPDATE buku SET stok = stok + ? WHERE id = ?";
         $stmt = $conn->prepare($query);
-        $stmt->bind_param("i", $id_buku);
+        $stmt->bind_param("ii", $jumlah_pinjam, $id_buku);
 
         if (!$stmt->execute()) {
             throw new Exception("Gagal mengupdate stok buku: " . $stmt->error);
