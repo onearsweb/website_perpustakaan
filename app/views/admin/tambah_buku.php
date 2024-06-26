@@ -201,7 +201,7 @@
               <div class="col-xxl">
                 <div class="card mb-4">
                   <div class="card-header d-flex align-items-center justify-content-between">
-                    <h5 class="mb-0">Ubah Data Buku</h5>
+                    <h5 class="mb-0">Isi Data Buku</h5>
                     <small class="text-muted float-end">Perpustakaan Online</small>
                   </div>
                   <div class="card-body">
@@ -227,6 +227,56 @@
                           </div>
                         </div>
                       </div>
+
+                      <!-- Author -->
+                      <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label" for="basic-icon-default-fullname">Author/Penulis</label>
+                        <div class="col-sm-10">
+                          <div class="input-group input-group-merge">
+                            <span id="basic-icon-default-fullname2" class="input-group-text"><i class='bx bx-edit-alt'></i></span>
+                            <input type="text" class="form-control" id="author" name="author" placeholder="TereLiye" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Kategori Buku -->
+                      <div class="row mb-3">
+                        <label class="col-sm-2 mt-2 form-label" for="basic-icon-default-phone">Kategori Buku</label>
+                        <div class="col-sm-10">
+                          <div class="input-group">
+                            <select class="form-select" id="kategori-buku" name="kategori-buku">
+                              <option selected>Pilih Kategori Buku</option>
+                              <option value="Fantasi">Fantasi</option>
+                              <option value="Seni Budaya">Seni Budaya</option>
+                              <option value="Anak Anak">Anak - Anak</option>
+                              <option value="Pelajaran">Pelajaran / Edukasi</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Deskripsi Buku -->
+                      <div class="row mb-3">
+                          <label
+                            class="col-sm-2 mt-4 form-label"
+                            for="basic-icon-default-message"
+                            >Deskripsi Buku</label
+                          >
+                          <div class="col-sm-10">
+                            <div class="input-group input-group-merge">
+                              <span
+                                id="basic-icon-default-message2"
+                                class="input-group-text"
+                                ><i class='bx bxs-book-reader' ></i></span>
+                              <textarea
+                                id="deskripsi-buku"
+                                name="deskipsi-buku"
+                                class="form-control"
+                                placeholder="Pada Zaman Dahulu..."
+                              ></textarea>
+                            </div>
+                          </div>
+                        </div>
 
                       <!-- Rak Buku -->
                       <div class="row mb-3">
@@ -268,12 +318,12 @@
                         </div>
                       </div>
 
-                      <!-- Sampul Buku -->
+                      <!-- Cover Buku -->
                       <div class="row mb-5">
-                        <label class="col-sm-2 mt-2 form-label" for="basic-icon-default-phone">Sampul Buku</label>
+                        <label class="col-sm-2 mt-2 form-label" for="basic-icon-default-phone">Cover Buku</label>
                         <div class="col-sm-10">
                           <div class="mb-3">
-                            <input class="form-control" type="file" id="sampul-buku" name="sampul-buku" />
+                            <input class="form-control" type="file" id="cover-buku" name="cover-buku" />
                           </div>
                         </div>
                       </div>
