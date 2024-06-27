@@ -52,6 +52,7 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="<?=baseURL; ?>/assets/js/config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   </head>
 
   <body>
@@ -273,9 +274,9 @@
                         <td><?php echo $pinjam['tgl_kembali']; ?></td>
                         <td><?php echo $pinjam['status']; ?></td>
                         <td>
-                          <form action="<?=baseURL; ?>/pengembaliancontrollers/postPengembalian" method="post">
+                          <form action="<?=baseURL; ?>/pengembaliancontrollers/postPengembalian" method="post" id="formPengembalian<?= $pinjam['id']; ?>">
                             <input type="hidden" name="id_pinjam" value="<?php echo $pinjam['id']; ?>">
-                            <button type="submit" class="btn btn-primary" name="kembalikanBtn">Kembalikan</button>
+                            <button type="button" class="btn btn-primary" onclick="confirmKembalikan(<?= $pinjam['id']; ?>)" name="kembalikanBtn">Kembalikan</button>
                           </form>
                         </td>
                       </tr>
@@ -287,23 +288,6 @@
               
             </div>
             <!-- / Content -->
-
-            <!-- Modal -->
-          <div class="modal fade" id="kembalikanModal" tabindex="-1" aria-labelledby="kembalikanModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="kembalikanModalLabel">Kembalikan Buku Ini?</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
-                  <button type="button" class="btn btn-primary" id="kembalikanYaBtn">Ya</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Modal -->
 
             <div class="content-backdrop fade"></div>
           </div>
@@ -336,18 +320,57 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <!-- JS Modal -->
-  <script>
-    $(document).ready(function() {
-      $("#kembalikanBtn").click(function() {
-          $("#kembalikanModal").modal("show");
-      });
-  
-      $("#kembalikanYaBtn").click(function() {
-          // Tambahkan kode untuk mengembalikan buku di sini
-          $("#kembalikanModal").modal("hide");
-      });
-  });
-    </script>
+    <script>
+  function confirmKembalikan(id_pinjam) {
+    Swal.fire({
+      title: 'Konfirmasi',
+      text: 'Apakah Anda yakin ingin mengembalikan buku ini?',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Ya, Kembalikan!',
+      cancelButtonText: 'Batal',
+      customClass: {
+        popup: 'swal2-popup',
+        title: 'swal2-title',
+        content: 'swal2-content'
+      }
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Submit form pengembalian menggunakan Ajax
+        $.ajax({
+          url: '<?=baseURL; ?>/pengembaliancontrollers/postPengembalian',
+          type: 'POST',
+          data: $('#formPengembalian' + id_pinjam).serialize(),
+          success: function(response) {
+            // Tampilkan alert sukses setelah berhasil mengembalikan buku
+            showSuccessAlert();
+          },
+          error: function(xhr, status, error) {
+            // Handle error if needed
+          }
+        });
+      }
+    });
+  }
+
+  // Fungsi untuk menampilkan alert sukses
+  function showSuccessAlert() {
+    Swal.fire({
+      icon: 'success',
+      title: 'Berhasil!',
+      text: 'Buku berhasil dikembalikan.',
+      confirmButtonColor: '#3085d6',
+      customClass: {
+        popup: 'swal2-popup',
+        title: 'swal2-title',
+        content: 'swal2-content'
+      }
+    });
+  }
+  </script>
   </body>
 </html>

@@ -41,6 +41,10 @@
   <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
   <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
   <script src="<?=baseURL; ?>/assets/js/config.js"></script>
+  <!-- Sweetalert2 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+  <!-- Sweetalert2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
 </head>
 <style>
 .card {
@@ -246,64 +250,74 @@
             </div>
 
             <div class="row mb-5">
-              <?php foreach ($data['buku'] as $book): ?>
-                <div class="col-md-3 mb-3">
-                  <div class="card h-100">
+    <?php foreach ($data['buku'] as $book): ?>
+        <div class="col-md-3 mb-3">
+            <div class="card h-100 <?php if ($book['stok'] <= 0) echo 'card-empty'; ?>">
+                <div class="position-relative">
                     <img class="card-img-top" src="<?=baseURL; ?>/assets/img/book/<?php echo htmlspecialchars($book['gambar']); ?>" alt="<?php echo htmlspecialchars($book['gambar']); ?>" />
-                    <div class="card-body">
-                      <h5 class="card-title"><?php echo htmlspecialchars($book['judul']); ?></h5>
-                      <p class="card-author"><strong>Penulis:</strong> <?php echo htmlspecialchars($book['author']); ?></p>
-                      <p class="card-category"><strong>Kategori:</strong> <?php echo htmlspecialchars($book['kategori']); ?></p>
-                      <p class="card-stok"><strong>Stok: </strong><?php echo htmlspecialchars($book['stok']); ?>
-                      <p class="card-text"><?php echo htmlspecialchars($book['deskripsi']); ?>
-                        <a href="detail_buku.php?id=<?php echo $book['id']; ?>" class="detail-link">Detail Buku</a>
-                      </p>
-                      <div class="d-flex justify-content-between">
-                        <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#pinjamModal<?php echo $book['id']; ?>">Pinjam</button>
-                        <button type="button" class="btn btn-primary btn-sm" id="wishlistButton">
-                          <i class="fa-solid fa-book"></i> Wishlist
-                        </button>
-                      </div>
-                    </div>
-                  </div>
+                    <?php if ($book['stok'] <= 0): ?>
+                        <div class="card-overlay">
+                            <div class="text-overlay">
+                                <div class="text-content">
+                                    Kosong
+                                </div>
+                            </div>
+                        </div>
+                    <?php endif; ?>
                 </div>
+                <div class="card-body">
+                    <h5 class="card-title"><?php echo htmlspecialchars($book['judul']); ?></h5>
+                    <p class="card-author"><strong>Penulis:</strong> <?php echo htmlspecialchars($book['author']); ?></p>
+                    <p class="card-category"><strong>Kategori:</strong> <?php echo htmlspecialchars($book['kategori']); ?></p>
+                    <p class="card-stok"><strong>Stok: </strong><?php echo htmlspecialchars($book['stok']); ?></p>
+                    <p class="card-text"><?php echo htmlspecialchars($book['deskripsi']); ?></p>
+                    <div class="d-flex justify-content-between">
+                        <button type="button" class="btn btn-outline-primary btn-sm <?php if ($book['stok'] <= 0) echo 'disabled'; ?>" data-bs-toggle="modal" data-bs-target="#pinjamModal<?php echo $book['id']; ?>" <?php if ($book['stok'] <= 0) echo 'disabled'; ?>>Pinjam</button>
+                        <button type="button" class="btn btn-primary btn-sm <?php if ($book['stok'] <= 0) echo 'disabled'; ?>" onclick="addToWishlist(<?php echo $book['id']; ?>)" <?php if ($book['stok'] <= 0) echo 'disabled'; ?>>
+                            <i class="fa-solid fa-book"></i> Wishlist
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                <div class="modal fade" id="pinjamModal<?php echo $book['id']; ?>" tabindex="-1" aria-labelledby="pinjamModalLabel<?php echo $book['id']; ?>" aria-hidden="true">
+                <div class="modal fade" id="pinjamModal<?= $book['id']; ?>" tabindex="-1" aria-labelledby="pinjamModalLabel<?= $book['id']; ?>" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="pinjamModalLabel<?php echo $book['id']; ?>">Pinjam Buku Ini</h5>
+                        <h5 class="modal-title" id="pinjamModalLabel<?= $book['id']; ?>">Pinjam Buku Ini</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
-                        <form action="<?=baseURL; ?>/pinjamcontrollers/pinjam" method="post" id="pinjamForm<?php echo $book['id']; ?>">
-                          <input type="hidden" name="id_buku" value="<?php echo $book['id']; ?>">
-                          <input type="hidden" name="nim_anggota" value="<?php echo $_SESSION['user_nim'];?>">
+                        <form id="pinjamForm<?= $book['id']; ?>">
+                          <input type="hidden" name="id_buku" value="<?= $book['id']; ?>">
+                          <input type="hidden" name="nim_anggota" value="<?= $_SESSION['user_nim']; ?>">
                           <div class="mb-3">
-                            <label for="namaBuku<?php echo $book['id']; ?>" class="form-label">Nama Buku</label>
-                            <input type="text" class="form-control" id="namaBuku<?php echo $book['id']; ?>" value="<?php echo htmlspecialchars($book['judul']); ?>" required readonly>
+                            <label for="namaBuku<?= $book['id']; ?>" class="form-label">Nama Buku</label>
+                            <input type="text" class="form-control" id="namaBuku<?= $book['id']; ?>" value="<?= htmlspecialchars($book['judul']); ?>" required readonly>
                           </div>
                           <div class="mb-3">
-                            <label for="penulisBuku<?php echo $book['id']; ?>" class="form-label">Penulis Buku</label>
-                            <input type="text" class="form-control" id="penulisBuku<?php echo $book['id']; ?>" value="<?php echo htmlspecialchars($book['author']); ?>" required readonly>
+                            <label for="penulisBuku<?= $book['id']; ?>" class="form-label">Penulis Buku</label>
+                            <input type="text" class="form-control" id="penulisBuku<?= $book['id']; ?>" value="<?= htmlspecialchars($book['author']); ?>" required readonly>
                           </div>
                           <div class="mb-3">
-                            <label for="tanggalPinjam<?php echo $book['id']; ?>" class="form-label">Tanggal Peminjaman</label>
-                            <input type="date" class="form-control" id="tanggalPinjam<?php echo $book['id']; ?>" name="tgl_pinjam" value="<?php echo date('Y-m-d'); ?>" readonly required>
+                            <label for="tanggalPinjam<?= $book['id']; ?>" class="form-label">Tanggal Peminjaman</label>
+                            <input type="date" class="form-control" id="tanggalPinjam<?= $book['id']; ?>" name="tgl_pinjam" value="<?= date('Y-m-d'); ?>" readonly required>
                           </div>
                           <div class="mb-3">
-                            <label for="tanggalKembali<?php echo $book['id']; ?>" class="form-label">Tanggal Pengembalian</label>
-                            <input type="date" class="form-control" id="tanggalKembali<?php echo $book['id']; ?>" name="tenggat_pengembalian" required>
+                            <label for="tanggalKembali<?= $book['id']; ?>" class="form-label">Tanggal Pengembalian</label>
+                            <input type="date" class="form-control" id="tanggalKembali<?= $book['id']; ?>" name="tenggat_pengembalian" min="<?= date('Y-m-d'); ?>" required>
                           </div>
                           <div class="mb-3">
-                            <label for="jumlahPinjam<?php echo $book['id']; ?>" class="form-label">Jumlah Pinjam</label>
-                            <input type="number" class="form-control" id="jumlahPinjam<?php echo $book['id']; ?>" name="jumlah_pinjam" required min="1">
+                            <label for="jumlahPinjam<?= $book['id']; ?>" class="form-label">Jumlah Pinjam</label>
+                            <input type="number" class="form-control" id="jumlahPinjam<?= $book['id']; ?>" name="jumlah_pinjam" required min="1">
                           </div>
                         </form>
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                        <button type="submit" class="btn btn-primary" form="pinjamForm<?php echo $book['id']; ?>">Pinjam</button>
+                        <!-- Tambahkan onClick event untuk menangani klik tombol "Pinjam" -->
+                        <button type="button" class="btn btn-primary" id="submitPinjam<?= $book['id']; ?>" onclick="submitPinjam(<?= $book['id']; ?>)">Pinjam</button>
                       </div>
                     </div>
                   </div>
@@ -348,18 +362,88 @@
 
       <!-- JS Modal -->
       <script>
-        document.getElementById('submitPinjam').addEventListener('click', function() {
-          // Ambil nilai tanggal peminjaman dan tanggal pengembalian dari form
-          var tanggalPinjam = document.getElementById('tanggalPinjam').value;
-          var tanggalKembali = document.getElementById('tanggalKembali').value;
+  // JavaScript untuk mengatur tanggal peminjaman saat modal dibuka
+  document.addEventListener('DOMContentLoaded', function() {
+    <?php foreach ($data['buku'] as $book): ?>
+      var tanggalPinjamInput<?= $book['id']; ?> = document.getElementById('tanggalPinjam<?= $book['id']; ?>');
+      tanggalPinjamInput<?= $book['id']; ?>.value = '<?= date('Y-m-d'); ?>';
+    <?php endforeach; ?>
+  });
 
-          // Lakukan apa pun yang perlu dilakukan dengan data ini, misalnya validasi atau pengiriman ke server
+  // Fungsi untuk menangani klik tombol "Pinjam"
+  function submitPinjam(bookId) {
+    // Lakukan validasi form jika diperlukan sebelum mengirim data
+    var formId = 'pinjamForm' + bookId;
+    var form = document.getElementById(formId);
 
-          // Tutup modal setelah selesai
-          var myModal = new bootstrap.Modal(document.getElementById('pinjamModal'));
-          myModal.hide();
+    // Simulasi respons sukses atau gagal (ganti dengan respons asli dari server)
+    var isSuccessful = true; // Ganti dengan logika yang sesuai dari server
+
+    if (isSuccessful) {
+      // Tampilkan alert sukses menggunakan sweetalert2
+      Swal.fire({
+        icon: 'success',
+        title: 'Sukses!',
+        text: 'Buku berhasil dipinjam.',
+        showConfirmButton: false,
+        timer: 1500 // Durasi alert ditampilkan dalam milidetik
+      }).then(function() {
+        // Tutup modal setelah berhasil
+        $('#pinjamModal<?= $book['id']; ?>').modal('hide');
+
+        // Redirect ke pengembalian.php setelah peminjaman berhasil
+        window.location.href = 'pengembalian.php'; // Sesuaikan dengan nama file dan path yang sesuai
+      });
+    } else {
+      // Tampilkan alert gagal menggunakan sweetalert2
+      Swal.fire({
+        icon: 'error',
+        title: 'Gagal!',
+        text: 'Gagal meminjam buku. Silakan coba lagi.'
+      });
+    }
+  }
+
+  // Fungsi untuk menangani klik tombol "Wishlist"
+  function addToWishlist(bookId) {
+    // Kirim permintaan AJAX menggunakan fetch
+    fetch('add_to_wishlist.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ bookId: bookId }),
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.status === 'success') {
+        // Tampilkan alert sukses menggunakan sweetalert2
+        Swal.fire({
+          icon: 'success',
+          title: 'Sukses!',
+          text: 'Buku berhasil ditambahkan ke wishlist kamu.',
+          showConfirmButton: false,
+          timer: 1500 // Durasi alert ditampilkan dalam milidetik
         });
-      </script>
+      } else {
+        // Tampilkan alert gagal menggunakan sweetalert2
+        Swal.fire({
+          icon: 'error',
+          title: 'Gagal!',
+          text: 'Gagal menambahkan buku ke wishlist. Silakan coba lagi.'
+        });
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      // Tampilkan alert kesalahan jika terjadi kesalahan saat kirim permintaan
+      Swal.fire({
+        icon: 'error',
+        title: 'Error!',
+        text: 'Terjadi kesalahan saat menambahkan buku ke wishlist. Silakan coba lagi nanti.'
+      });
+    });
+  }
+</script>
 </body>
-
 </html>
