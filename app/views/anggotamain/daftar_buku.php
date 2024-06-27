@@ -255,26 +255,18 @@
             <div class="card h-100 <?php if ($book['stok'] <= 0) echo 'card-empty'; ?>">
                 <div class="position-relative">
                     <img class="card-img-top" src="<?=baseURL; ?>/assets/img/book/<?php echo htmlspecialchars($book['gambar']); ?>" alt="<?php echo htmlspecialchars($book['gambar']); ?>" />
-                    <?php if ($book['stok'] <= 0): ?>
-                        <div class="card-overlay">
-                            <div class="text-overlay">
-                                <div class="text-content">
-                                    Kosong
-                                </div>
-                            </div>
-                        </div>
-                    <?php endif; ?>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title"><?php echo htmlspecialchars($book['judul']); ?></h5>
-                    <p class="card-author"><strong>Penulis:</strong> <?php echo htmlspecialchars($book['author']); ?></p>
-                    <p class="card-category"><strong>Kategori:</strong> <?php echo htmlspecialchars($book['kategori']); ?></p>
-                    <p class="card-stok"><strong>Stok: </strong><?php echo htmlspecialchars($book['stok']); ?></p>
-                    <p class="card-text"><?php echo htmlspecialchars($book['deskripsi']); ?></p>
-                    <div class="d-flex justify-content-between">
-                        <button type="button" class="btn btn-outline-primary btn-sm <?php if ($book['stok'] <= 0) echo 'disabled'; ?>" data-bs-toggle="modal" data-bs-target="#pinjamModal<?php echo $book['id']; ?>" <?php if ($book['stok'] <= 0) echo 'disabled'; ?>>Pinjam</button>
-                        <button type="button" class="btn btn-primary btn-sm <?php if ($book['stok'] <= 0) echo 'disabled'; ?>" onclick="addToWishlist(<?php echo $book['id']; ?>)" <?php if ($book['stok'] <= 0) echo 'disabled'; ?>>
-                            <i class="fa-solid fa-book"></i> Wishlist
+                    <div class="card-body">
+                      <h5 class="card-title"><?php echo htmlspecialchars($book['judul']); ?></h5>
+                      <p class="card-author"><strong>Penulis:</strong> <?php echo htmlspecialchars($book['author']); ?></p>
+                      <p class="card-category"><strong>Kategori:</strong> <?php echo htmlspecialchars($book['kategori']); ?></p>
+                      <p class="card-stok"><strong>Stok: </strong><?php echo htmlspecialchars($book['stok']); ?>
+                      <p class="card-text"><?php echo htmlspecialchars($book['deskripsi']); ?>
+                        <a href="detail_buku.php?id=<?php echo $book['id']; ?>" class="detail-link">Detail Buku</a>
+                      </p>
+                      <div class="d-flex justify-content-between">
+                        <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#pinjamModal<?php echo $book['id']; ?>">Pinjam</button>
+                        <button type="button" class="btn btn-primary btn-sm" id="wishlistButton">
+                          <i class="fa-solid fa-book"></i> Wishlist
                         </button>
                     </div>
                 </div>
