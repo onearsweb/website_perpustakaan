@@ -29,4 +29,15 @@ class AnggotaControllers extends Controller {
         $data['nama'] = $anggotaModel->getNamaAnggotaByNim($nim);
         $this->view('anggotamain/pengembalian', $data);
     }
+
+    public function detailbuku($id) {
+        $nim = $_SESSION['user_nim'];
+
+        $bukuModel = new Buku();
+        $anggotaModel = new Anggota();
+        $data['buku'] = $bukuModel->getBuku($id);
+        $data['nama'] = $anggotaModel->getNamaAnggotaByNim($nim);
+
+        $this->view('anggotamain/detail_buku', $data);
+    }
 }

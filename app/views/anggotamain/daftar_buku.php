@@ -255,8 +255,8 @@
                       <p class="card-author"><strong>Penulis:</strong> <?php echo htmlspecialchars($book['author']); ?></p>
                       <p class="card-category"><strong>Kategori:</strong> <?php echo htmlspecialchars($book['kategori']); ?></p>
                       <p class="card-stok"><strong>Stok: </strong><?php echo htmlspecialchars($book['stok']); ?>
-                      <p class="card-text"><?php echo htmlspecialchars($book['deskripsi']); ?>
-                        <a href="detail_buku.php?id=<?php echo $book['id']; ?>" class="detail-link">Detail Buku</a>
+                      <p class="card-text">
+                        <a href="<?=baseURL; ?>/anggotacontrollers/detailbuku/<?php echo htmlspecialchars($book['id']); ?>" class="detail-link">Detail Buku</a>
                       </p>
                       <div class="d-flex justify-content-between">
                         <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#pinjamModal<?php echo $book['id']; ?>">Pinjam</button>
