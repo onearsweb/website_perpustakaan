@@ -348,6 +348,7 @@
           success: function(response) {
             // Tampilkan alert sukses setelah berhasil mengembalikan buku
             showSuccessAlert();
+            window.location.href = '<?=baseURL; ?>/anggotacontrollers/pengembalian';
           },
           error: function(xhr, status, error) {
             // Handle error if needed
