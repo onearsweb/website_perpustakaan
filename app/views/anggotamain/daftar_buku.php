@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="<?=baseURL; ?>/assets/" data-template="vertical-menu-template-free">
+<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="<?= baseURL; ?>/assets/" data-template="vertical-menu-template-free">
 
 <head>
   <meta charset="utf-8" />
@@ -10,7 +10,7 @@
   <meta name="description" content="" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="<?=baseURL; ?>/assets/img/favicon/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="<?= baseURL; ?>/assets/img/favicon/favicon.ico" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,52 +18,52 @@
   <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
 
   <!-- Icons. Uncomment required icon fonts -->
-  <link rel="stylesheet" href="<?=baseURL; ?>/assets/vendor/fonts/boxicons.css" />
+  <link rel="stylesheet" href="<?= baseURL; ?>/assets/vendor/fonts/boxicons.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 
   <!-- Core CSS -->
-  <link rel="stylesheet" href="<?=baseURL; ?>/assets/vendor/css/core.css" class="template-customizer-core-css" />
-  <link rel="stylesheet" href="<?=baseURL; ?>/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-  <link rel="stylesheet" href="<?=baseURL; ?>/assets/css/demo.css" />
+  <link rel="stylesheet" href="<?= baseURL; ?>/assets/vendor/css/core.css" class="template-customizer-core-css" />
+  <link rel="stylesheet" href="<?= baseURL; ?>/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+  <link rel="stylesheet" href="<?= baseURL; ?>/assets/css/demo.css" />
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
   <!-- Vendors CSS -->
-  <link rel="stylesheet" href="<?=baseURL; ?>/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+  <link rel="stylesheet" href="<?= baseURL; ?>/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
-  <link rel="stylesheet" href="<?=baseURL; ?>/assets/vendor/libs/apex-charts/apex-charts.css" />
+  <link rel="stylesheet" href="<?= baseURL; ?>/assets/vendor/libs/apex-charts/apex-charts.css" />
 
   <!-- Page CSS -->
 
   <!-- Helpers -->
-  <script src="<?=baseURL; ?>/assets/vendor/js/helpers.js"></script>
+  <script src="<?= baseURL; ?>/assets/vendor/js/helpers.js"></script>
 
   <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
   <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-  <script src="<?=baseURL; ?>/assets/js/config.js"></script>
+  <script src="<?= baseURL; ?>/assets/js/config.js"></script>
   <!-- Sweetalert2 CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
   <!-- Sweetalert2 JS -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
 </head>
 <style>
-.card {
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+  .card {
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
 
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
 
-        .card-body .btn {
-            transition: background-color 0.3s, color 0.3s;
-        }
+  .card-body .btn {
+    transition: background-color 0.3s, color 0.3s;
+  }
 
-        .card-body .btn:hover {
-            background-color: #007bff;
-            color: #fff;
-        }
+  .card-body .btn:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
 </style>
 
 <body>
@@ -122,14 +122,14 @@
         <ul class="menu-inner py-1">
           <!-- Dashboard -->
           <li class="menu-item active">
-            <a href="<?=baseURL; ?>/anggotacontrollers/index" class="menu-link">
+            <a href="<?= baseURL; ?>/anggotacontrollers/index" class="menu-link">
               <i class="menu-icon tf-icons bx bx-detail"></i>
               <div data-i18n="Analytics">Daftar Buku</div>
             </a>
           </li>
 
           <li class="menu-item">
-            <a href="<?=baseURL; ?>/anggotacontrollers/pengembalian" class="menu-link">
+            <a href="<?= baseURL; ?>/anggotacontrollers/pengembalian" class="menu-link">
               <i class="menu-icon tf-icons bx bx-dock-top"></i>
               <div data-i18n="Tables">Pengembalian</div>
             </a>
@@ -172,7 +172,7 @@
               <li class="nav-item navbar-dropdown dropdown-user dropdown">
                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                   <div class="avatar avatar-online">
-                    <img src="<?=baseURL; ?>/assets/img/avatars/2.png" alt class="w-px-40 h-auto rounded-circle" />
+                    <img src="<?= baseURL; ?>/assets/img/avatars/2.png" alt class="w-px-40 h-auto rounded-circle" />
                   </div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
@@ -181,7 +181,7 @@
                       <div class="d-flex">
                         <div class="flex-shrink-0 me-3">
                           <div class="avatar avatar-online">
-                            <img src="<?=baseURL; ?>/assets/img/avatars/2.png" alt class="w-px-40 h-auto rounded-circle" />
+                            <img src="<?= baseURL; ?>/assets/img/avatars/2.png" alt class="w-px-40 h-auto rounded-circle" />
                           </div>
                         </div>
                         <div class="flex-grow-1">
@@ -210,7 +210,7 @@
                     <div class="dropdown-divider"></div>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="<?=baseURL; ?>/login/logout">
+                    <a class="dropdown-item" href="<?= baseURL; ?>/login/logout">
                       <i class="bx bx-power-off me-2"></i>
                       <span class="align-middle">Log Out</span>
                     </a>
@@ -234,94 +234,102 @@
                 <div class="d-flex align-items-end row">
                   <div class="col-sm-7">
                     <div class="card-body">
-                      <h5 class="card-title">Halo <?php echo $data['nama'];?>,</h5>
+                      <h5 class="card-title">Halo <?php echo $data['nama']; ?>,</h5>
                       <p class="fs-4 mb-4">
-                      <span class="fw-bold">Temukan Buku yang Akan Kamu Baca Disini!</span>
+                        <span class="fw-bold">Temukan Buku yang Akan Kamu Baca Disini!</span>
                       </p>
                     </div>
                   </div>
                   <div class="col-sm-5 text-center text-sm-left">
                     <div class="card-body pb-0 px-0 px-md-4">
-                      <img src="<?=baseURL; ?>/assets/img/backgrounds/buku.png" height="140" alt="View Badge User" data-app-dark-img="backgrounds/book.png" data-app-light-img="backgrounds/book.png" />
+                      <img src="<?= baseURL; ?>/assets/img/backgrounds/buku.png" height="140" alt="View Badge User" data-app-dark-img="backgrounds/book.png" data-app-light-img="backgrounds/book.png" />
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="row mb-5">
-            <?php foreach ($data['buku'] as $book): ?>
-                <div class="col-md-3 mb-3">
+            <div class="container mt-5">
+              <div class="row mb-5">
+                <?php foreach ($data['buku'] as $book) : ?>
+                  <div class="col-md-3 mb-3 d-flex">
                     <div class="card h-100 <?php if ($book['stok'] <= 0) echo 'card-empty'; ?>">
-                        <div class="position-relative">
-                            <img class="card-img-top" src="<?=baseURL; ?>/assets/img/book/<?php echo htmlspecialchars($book['gambar']); ?>" alt="<?php echo htmlspecialchars($book['gambar']); ?>" />
-                            <div class="card-body">
-                              <h5 class="card-title"><?php echo htmlspecialchars($book['judul']); ?></h5>
-                              <p class="card-author"><strong>Penulis:</strong> <?php echo htmlspecialchars($book['author']); ?></p>
-                              <p class="card-category"><strong>Kategori:</strong> <?php echo htmlspecialchars($book['kategori']); ?></p>
-                              <p class="card-stok"><strong>Stok: </strong><?php echo htmlspecialchars($book['stok']); ?>
-                              <p class="card-text"><?php echo htmlspecialchars($book['deskripsi']); ?>
-                                <a href="<?=baseURL; ?>/anggotacontrollers/detailbuku/<?php echo htmlspecialchars($book['id']); ?>" class="detail-link">Detail Buku</a>
-                              </p>
-                              <div class="d-flex justify-content-between">
-                                <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#pinjamModal<?php echo $book['id']; ?>">Pinjam</button>
-                                <button type="button" class="btn btn-primary btn-sm" id="wishlistButton">
-                                  <i class="fa-solid fa-book"></i> Wishlist
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                        <div class="modal fade" id="pinjamModal<?= $book['id']; ?>" tabindex="-1" aria-labelledby="pinjamModalLabel<?= $book['id']; ?>" aria-hidden="true">
-                          <div class="modal-dialog">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <h5 class="modal-title" id="pinjamModalLabel<?= $book['id']; ?>">Pinjam Buku Ini</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                              </div>
-                              <div class="modal-body">
-                                <form id="pinjamForm<?= $book['id']; ?>">
-                                  <input type="hidden" name="id_buku" value="<?= $book['id']; ?>">
-                                  <input type="hidden" name="nim_anggota" value="<?= $_SESSION['user_nim']; ?>">
-                                  <div class="mb-3">
-                                    <label for="namaBuku<?= $book['id']; ?>" class="form-label">Nama Buku</label>
-                                    <input type="text" class="form-control" id="namaBuku<?= $book['id']; ?>" value="<?= htmlspecialchars($book['judul']); ?>" required readonly>
-                                  </div>
-                                  <div class="mb-3">
-                                    <label for="penulisBuku<?= $book['id']; ?>" class="form-label">Penulis Buku</label>
-                                    <input type="text" class="form-control" id="penulisBuku<?= $book['id']; ?>" value="<?= htmlspecialchars($book['author']); ?>" required readonly>
-                                  </div>
-                                  <div class="mb-3">
-                                    <label for="tanggalPinjam<?= $book['id']; ?>" class="form-label">Tanggal Peminjaman</label>
-                                    <input type="date" class="form-control" id="tanggalPinjam<?= $book['id']; ?>" name="tgl_pinjam" value="<?= date('Y-m-d'); ?>" readonly required>
-                                  </div>
-                                  <div class="mb-3">
-                                    <label for="tanggalKembali<?= $book['id']; ?>" class="form-label">Tanggal Pengembalian</label>
-                                    <input type="date" class="form-control" id="tanggalKembali<?= $book['id']; ?>" name="tenggat_pengembalian" min="<?= date('Y-m-d'); ?>" required>
-                                  </div>
-                                  <div class="mb-3">
-                                      <label for="jumlahPinjam<?= $book['id']; ?>" class="form-label">Jumlah Pinjam</label>
-                                      <?php if ($book['stok'] > 0): ?>
-                                          <input type="number" class="form-control" id="jumlahPinjam<?= $book['id']; ?>" name="jumlah_pinjam" required min="1" max="<?= $book['stok']; ?>">
-                                      <?php else: ?>
-                                          <input type="number" class="form-control" id="jumlahPinjam<?= $book['id']; ?>" name="jumlah_pinjam" required min="1" max="0" readonly>
-                                      <?php endif; ?>
-                                  </div>
-                                </form>
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                                <!-- Tambahkan onClick event untuk menangani klik tombol "Pinjam" -->
-                                <button type="button" class="btn btn-primary" id="submitPinjam<?= $book['id']; ?>" onclick="submitPinjam(<?= $book['id']; ?>)">Pinjam</button>
+                      <div class="position-relative">
+                        <img class="card-img-top" src="<?= baseURL; ?>/assets/img/book/<?php echo htmlspecialchars($book['gambar']); ?>" alt="<?php echo htmlspecialchars($book['gambar']); ?>" />
+                        <?php if ($book['stok'] <= 0) : ?>
+                          <div class="card-overlay">
+                            <div class="text-overlay">
+                              <div class="text-content">
+                                Kosong
                               </div>
                             </div>
                           </div>
+                        <?php endif; ?>
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title"><?php echo htmlspecialchars($book['judul']); ?></h5>
+                        <p class="card-author"><strong>Penulis:</strong> <?php echo htmlspecialchars($book['author']); ?></p>
+                        <p class="card-category"><strong>Kategori:</strong> <?php echo htmlspecialchars($book['kategori']); ?></p>
+                        <p class="card-stok"><strong>Stok: </strong><?php echo htmlspecialchars($book['stok']); ?></p>
+                        <p class="card-text"><?php echo htmlspecialchars($book['deskripsi']); ?></p>
+                        <div class="d-flex justify-content-between">
+                          <button type="button" class="btn btn-outline-primary btn-sm <?php if ($book['stok'] <= 0) echo 'disabled'; ?>" data-bs-toggle="modal" data-bs-target="#pinjamModal<?php echo $book['id']; ?>" <?php if ($book['stok'] <= 0) echo 'disabled'; ?>>Pinjam</button>
+                          <button type="button" class="btn btn-primary btn-sm <?php if ($book['stok'] <= 0) echo 'disabled'; ?>" onclick="addToWishlist(<?php echo $book['id']; ?>)" <?php if ($book['stok'] <= 0) echo 'disabled'; ?>>
+                            <i class="fa-solid fa-book"></i> Wishlist
+                          </button>
                         </div>
+                      </div>
                     </div>
-                  <?php endforeach; ?>
-              <div class="content-backdrop fade"></div>
+                  </div>
+
+                  <div class="modal fade" id="pinjamModal<?= $book['id']; ?>" tabindex="-1" aria-labelledby="pinjamModalLabel<?= $book['id']; ?>" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="pinjamModalLabel<?= $book['id']; ?>">Pinjam Buku Ini</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <form id="pinjamForm<?= $book['id']; ?>">
+                            <input type="hidden" name="id_buku" value="<?= $book['id']; ?>">
+                            <input type="hidden" name="nim_anggota" value="<?= $_SESSION['user_nim']; ?>">
+                            <div class="mb-3">
+                              <label for="namaBuku<?= $book['id']; ?>" class="form-label">Nama Buku</label>
+                              <input type="text" class="form-control" id="namaBuku<?= $book['id']; ?>" value="<?= htmlspecialchars($book['judul']); ?>" required readonly>
+                            </div>
+                            <div class="mb-3">
+                              <label for="penulisBuku<?= $book['id']; ?>" class="form-label">Penulis Buku</label>
+                              <input type="text" class="form-control" id="penulisBuku<?= $book['id']; ?>" value="<?= htmlspecialchars($book['author']); ?>" required readonly>
+                            </div>
+                            <div class="mb-3">
+                              <label for="tanggalPinjam<?= $book['id']; ?>" class="form-label">Tanggal Peminjaman</label>
+                              <input type="date" class="form-control" id="tanggalPinjam<?= $book['id']; ?>" name="tgl_pinjam" value="<?= date('Y-m-d'); ?>" readonly required>
+                            </div>
+                            <div class="mb-3">
+                              <label for="tanggalKembali<?= $book['id']; ?>" class="form-label">Tanggal Pengembalian</label>
+                              <input type="date" class="form-control" id="tanggalKembali<?= $book['id']; ?>" name="tenggat_pengembalian" min="<?= date('Y-m-d'); ?>" required>
+                            </div>
+                            <div class="mb-3">
+                              <label for="jumlahPinjam<?= $book['id']; ?>" class="form-label">Jumlah Pinjam</label>
+                              <?php if ($book['stok'] > 0) : ?>
+                                <input type="number" class="form-control" id="jumlahPinjam<?= $book['id']; ?>" name="jumlah_pinjam" required min="1" max="<?= $book['stok']; ?>">
+                              <?php else : ?>
+                                <input type="number" class="form-control" id="jumlahPinjam<?= $book['id']; ?>" name="jumlah_pinjam" required min="1" max="0" readonly>
+                              <?php endif; ?>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                          <button type="button" class="btn btn-primary" id="submitPinjam<?= $book['id']; ?>" onclick="submitPinjam(<?= $book['id']; ?>)">Pinjam</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <?php endforeach; ?>
+              </div>
             </div>
+
             <!-- Content wrapper -->
           </div>
           <!-- / Layout page -->
@@ -333,22 +341,22 @@
       <!-- / Layout wrapper -->
       <!-- Core JS -->
       <!-- build:js assets/vendor/js/core.js -->
-      <script src="<?=baseURL; ?>/assets/vendor/libs/jquery/jquery.js"></script>
-      <script src="<?=baseURL; ?>/assets/vendor/libs/popper/popper.js"></script>
-      <script src="<?=baseURL; ?>/assets/vendor/js/bootstrap.js"></script>
-      <script src="<?=baseURL; ?>/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+      <script src="<?= baseURL; ?>/assets/vendor/libs/jquery/jquery.js"></script>
+      <script src="<?= baseURL; ?>/assets/vendor/libs/popper/popper.js"></script>
+      <script src="<?= baseURL; ?>/assets/vendor/js/bootstrap.js"></script>
+      <script src="<?= baseURL; ?>/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 
-      <script src="<?=baseURL; ?>/assets/vendor/js/menu.js"></script>
+      <script src="<?= baseURL; ?>/assets/vendor/js/menu.js"></script>
       <!-- endbuild -->
 
       <!-- Vendors JS -->
-      <script src="<?=baseURL; ?>/assets/vendor/libs/apex-charts/apexcharts.js"></script>
+      <script src="<?= baseURL; ?>/assets/vendor/libs/apex-charts/apexcharts.js"></script>
 
       <!-- Main JS -->
-      <script src="<?=baseURL; ?>/assets/js/main.js"></script>
+      <script src="<?= baseURL; ?>/assets/js/main.js"></script>
 
       <!-- Page JS -->
-      <script src="<?=baseURL; ?>/assets/js/dashboards-analytics.js"></script>
+      <script src="<?= baseURL; ?>/assets/js/dashboards-analytics.js"></script>
 
       <!-- Place this tag in your head or just before your close body tag. -->
       <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -357,100 +365,103 @@
 
       <!-- JS Modal -->
       <script>
-  // JavaScript untuk mengatur tanggal peminjaman saat modal dibuka
-  document.addEventListener('DOMContentLoaded', function() {
-    <?php foreach ($data['buku'] as $book): ?>
-      var tanggalPinjamInput<?= $book['id']; ?> = document.getElementById('tanggalPinjam<?= $book['id']; ?>');
-      tanggalPinjamInput<?= $book['id']; ?>.value = '<?= date('Y-m-d'); ?>';
-    <?php endforeach; ?>
-  });
+        // JavaScript untuk mengatur tanggal peminjaman saat modal dibuka
+        document.addEventListener('DOMContentLoaded', function() {
+          <?php foreach ($data['buku'] as $book) : ?>
+            var tanggalPinjamInput<?= $book['id']; ?> = document.getElementById('tanggalPinjam<?= $book['id']; ?>');
+            tanggalPinjamInput<?= $book['id']; ?>.value = '<?= date('Y-m-d'); ?>';
+          <?php endforeach; ?>
+        });
 
-  // Fungsi untuk menangani klik tombol "Pinjam"
-  function submitPinjam(bookId) {
-    var formId = 'pinjamForm' + bookId;
-    var form = document.getElementById(formId);
+        // Fungsi untuk menangani klik tombol "Pinjam"
+        function submitPinjam(bookId) {
+          var formId = 'pinjamForm' + bookId;
+          var form = document.getElementById(formId);
 
-    // Simulasi data yang akan dikirim
-    var formData = new FormData(form); // Menggunakan FormData untuk mengambil data formulir
+          // Simulasi data yang akan dikirim
+          var formData = new FormData(form); // Menggunakan FormData untuk mengambil data formulir
 
-    // Mengirim data menggunakan AJAX
-    $.ajax({
-        type: 'POST',
-        url: '<?=baseURL; ?>/pinjamcontrollers/pinjam',
-        data: formData,
-        processData: false,
-        contentType: false,
-        success: function(response) {
-            // Respons dari server dapat digunakan untuk menentukan berhasil atau gagal
-            if (response.success) {
+          // Mengirim data menggunakan AJAX
+          $.ajax({
+            type: 'POST',
+            url: '<?= baseURL; ?>/pinjamcontrollers/pinjam',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(response) {
+              // Respons dari server dapat digunakan untuk menentukan berhasil atau gagal
+              if (response.success) {
                 Swal.fire({
-                    icon: 'success',
-                    title: 'Sukses!',
-                    text: 'Buku berhasil dipinjam.',
-                    showConfirmButton: false,
-                    timer: 1500
+                  icon: 'success',
+                  title: 'Sukses!',
+                  text: 'Buku berhasil dipinjam.',
+                  showConfirmButton: false,
+                  timer: 1500
                 }).then(function() {
-                    $('#pinjamModal' + bookId).modal('hide');
-                    window.location.href = '<?=baseURL; ?>/anggotacontrollers/pengembalian';
+                  $('#pinjamModal' + bookId).modal('hide');
+                  window.location.href = '<?= baseURL; ?>/anggotacontrollers/pengembalian';
                 });
-            } else {
+              } else {
                 Swal.fire({
-                    icon: 'error',
-                    title: 'Gagal!',
-                    text: 'Gagal meminjam buku. Silakan coba lagi.'
+                  icon: 'error',
+                  title: 'Gagal!',
+                  text: 'Gagal meminjam buku. Silakan coba lagi.'
                 });
-            }
-        },
-        error: function() {
-            Swal.fire({
+              }
+            },
+            error: function() {
+              Swal.fire({
                 icon: 'error',
                 title: 'Error!',
                 text: 'Terjadi kesalahan saat memproses permintaan. Silakan coba lagi.'
+              });
+            }
+          });
+        }
+
+        // Fungsi untuk menangani klik tombol "Wishlist"
+        function addToWishlist(bookId) {
+          // Kirim permintaan AJAX menggunakan fetch
+          fetch('add_to_wishlist.php', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                bookId: bookId
+              }),
+            })
+            .then(response => response.json())
+            .then(data => {
+              if (data.status === 'success') {
+                // Tampilkan alert sukses menggunakan sweetalert2
+                Swal.fire({
+                  icon: 'success',
+                  title: 'Sukses!',
+                  text: 'Buku berhasil ditambahkan ke wishlist kamu.',
+                  showConfirmButton: false,
+                  timer: 1500 // Durasi alert ditampilkan dalam milidetik
+                });
+              } else {
+                // Tampilkan alert gagal menggunakan sweetalert2
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Gagal!',
+                  text: 'Gagal menambahkan buku ke wishlist. Silakan coba lagi.'
+                });
+              }
+            })
+            .catch(error => {
+              console.error('Error:', error);
+              // Tampilkan alert kesalahan jika terjadi kesalahan saat kirim permintaan
+              Swal.fire({
+                icon: 'error',
+                title: 'Error!',
+                text: 'Terjadi kesalahan saat menambahkan buku ke wishlist. Silakan coba lagi nanti.'
+              });
             });
         }
-    });
-  }
-
-  // Fungsi untuk menangani klik tombol "Wishlist"
-  function addToWishlist(bookId) {
-    // Kirim permintaan AJAX menggunakan fetch
-    fetch('add_to_wishlist.php', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ bookId: bookId }),
-    })
-    .then(response => response.json())
-    .then(data => {
-      if (data.status === 'success') {
-        // Tampilkan alert sukses menggunakan sweetalert2
-        Swal.fire({
-          icon: 'success',
-          title: 'Sukses!',
-          text: 'Buku berhasil ditambahkan ke wishlist kamu.',
-          showConfirmButton: false,
-          timer: 1500 // Durasi alert ditampilkan dalam milidetik
-        });
-      } else {
-        // Tampilkan alert gagal menggunakan sweetalert2
-        Swal.fire({
-          icon: 'error',
-          title: 'Gagal!',
-          text: 'Gagal menambahkan buku ke wishlist. Silakan coba lagi.'
-        });
-      }
-    })
-    .catch(error => {
-      console.error('Error:', error);
-      // Tampilkan alert kesalahan jika terjadi kesalahan saat kirim permintaan
-      Swal.fire({
-        icon: 'error',
-        title: 'Error!',
-        text: 'Terjadi kesalahan saat menambahkan buku ke wishlist. Silakan coba lagi nanti.'
-      });
-    });
-  }
-</script>
+      </script>
 </body>
+
 </html>
