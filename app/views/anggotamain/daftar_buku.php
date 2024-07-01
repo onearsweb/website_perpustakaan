@@ -64,6 +64,24 @@
     background-color: #007bff;
     color: #fff;
   }
+
+  .card-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  .card-link:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .card-title {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 2.4em; /* Adjust based on the line-height */
+  }
 </style>
 
 <body>
@@ -163,8 +181,8 @@
             <ul class="navbar-nav flex-row align-items-center ms-auto">
               <!-- Place this tag where you want the button to render. -->
               <li class="nav-item lh-1 me-3">
-                <a class="custom-button" href="halaman_wishlist.php">
-                  <i class="fa-solid fa-book"></i> Wishlist
+                <a class="custom-button" href="<?= baseURL; ?>/cartcontrollers/index">
+                  <i class="fa-solid fa-book"></i> Cart
                 </a>
               </li>
 
@@ -248,38 +266,39 @@
                 </div>
               </div>
             </div>
-
+      
             <div class="container mt-5">
               <div class="row mb-5">
                 <?php foreach ($data['buku'] as $book) : ?>
                   <div class="col-md-3 mb-3 d-flex">
-                    <div class="card h-100 <?php if ($book['stok'] <= 0) echo 'card-empty'; ?>">
-                      <div class="position-relative">
-                        <img class="card-img-top" src="<?= baseURL; ?>/assets/img/book/<?php echo htmlspecialchars($book['gambar']); ?>" alt="<?php echo htmlspecialchars($book['gambar']); ?>" />
-                        <?php if ($book['stok'] <= 0) : ?>
-                          <div class="card-overlay">
-                            <div class="text-overlay">
-                              <div class="text-content">
-                                Kosong
+                    <a href="<?= baseURL; ?>/anggotacontrollers/detailbuku/<?= $book['id']; ?>" class="card-link">
+                      <div class="card h-100 <?php if ($book['stok'] <= 0) echo 'card-empty'; ?>">
+                        <div class="position-relative">
+                          <img class="card-img-top" src="<?= baseURL; ?>/assets/img/book/<?php echo htmlspecialchars($book['gambar']); ?>" alt="<?php echo htmlspecialchars($book['gambar']); ?>" />
+                          <?php if ($book['stok'] <= 0) : ?>
+                            <div class="card-overlay">
+                              <div class="text-overlay">
+                                <div class="text-content">
+                                  Kosong
+                                </div>
                               </div>
                             </div>
+                          <?php endif; ?>
+                        </div>
+                        <div class="card-body">
+                          <h5 class="card-title"><?php echo htmlspecialchars($book['judul']); ?></h5>
+                          <p class="card-author"><strong>Penulis:</strong> <?php echo htmlspecialchars($book['author']); ?></p>
+                          <p class="card-category"><strong>Kategori:</strong> <?php echo htmlspecialchars($book['kategori']); ?></p>
+                          <p class="card-stok"><strong>Stok: </strong><?php echo htmlspecialchars($book['stok']); ?></p>
+                    </a>
+                          <div class="d-flex justify-content-between">
+                            <button type="button" class="btn btn-outline-primary btn-sm <?php if ($book['stok'] <= 0) echo 'disabled'; ?>" data-bs-toggle="modal" data-bs-target="#pinjamModal<?php echo $book['id']; ?>" <?php if ($book['stok'] <= 0) echo 'disabled'; ?>>Pinjam</button>
+                            <button type="button" class="btn btn-primary btn-sm <?php if ($book['stok'] <= 0) echo 'disabled'; ?>" onclick="addToCart(<?php echo $book['id']; ?>)" <?php if ($book['stok'] <= 0) echo 'disabled'; ?>>
+                              <i class="fa-solid fa-book"></i> Cart
+                            </button>
                           </div>
-                        <?php endif; ?>
-                      </div>
-                      <div class="card-body">
-                        <h5 class="card-title"><?php echo htmlspecialchars($book['judul']); ?></h5>
-                        <p class="card-author"><strong>Penulis:</strong> <?php echo htmlspecialchars($book['author']); ?></p>
-                        <p class="card-category"><strong>Kategori:</strong> <?php echo htmlspecialchars($book['kategori']); ?></p>
-                        <p class="card-stok"><strong>Stok: </strong><?php echo htmlspecialchars($book['stok']); ?></p>
-                        <p class="card-text"><?php echo htmlspecialchars($book['deskripsi']); ?></p>
-                        <div class="d-flex justify-content-between">
-                          <button type="button" class="btn btn-outline-primary btn-sm <?php if ($book['stok'] <= 0) echo 'disabled'; ?>" data-bs-toggle="modal" data-bs-target="#pinjamModal<?php echo $book['id']; ?>" <?php if ($book['stok'] <= 0) echo 'disabled'; ?>>Pinjam</button>
-                          <button type="button" class="btn btn-primary btn-sm <?php if ($book['stok'] <= 0) echo 'disabled'; ?>" onclick="addToWishlist(<?php echo $book['id']; ?>)" <?php if ($book['stok'] <= 0) echo 'disabled'; ?>>
-                            <i class="fa-solid fa-book"></i> Wishlist
-                          </button>
                         </div>
                       </div>
-                    </div>
                   </div>
 
                   <div class="modal fade" id="pinjamModal<?= $book['id']; ?>" tabindex="-1" aria-labelledby="pinjamModalLabel<?= $book['id']; ?>" aria-hidden="true">
@@ -460,6 +479,23 @@
                 text: 'Terjadi kesalahan saat menambahkan buku ke wishlist. Silakan coba lagi nanti.'
               });
             });
+        }
+
+        function addToCart(bookId) {
+          const xhr = new XMLHttpRequest();
+          xhr.open('POST', '<?= baseURL; ?>/cartcontrollers/addToCart/' + bookId, true);
+          xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+          xhr.onload = function() {
+            if (xhr.status === 200) {
+              // Optionally update the UI or show a message to the user
+              alert('Book added to cart successfully!');
+            } else {
+              alert('Failed to add book to cart.');
+            }
+          };
+
+          xhr.send();
         }
       </script>
 </body>

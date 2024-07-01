@@ -1,7 +1,7 @@
 <?php
 require 'connection.php';
 
-$dropTablesSql = "DROP TABLE IF EXISTS pinjam, buku, anggota, admin";
+$dropTablesSql = "DROP TABLE IF EXISTS pinjam, buku, anggota, admin, cart";
 if ($conn->multi_query($dropTablesSql)) {
     do {
         if ($result = $conn->store_result()) {
@@ -57,6 +57,16 @@ CREATE TABLE `pinjam` (
   FOREIGN KEY (`id_buku`) REFERENCES `buku`(`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (`nim_anggota`) REFERENCES `anggota`(`nim`) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+CREATE TABLE `cart` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `id_buku` int NOT NULL,
+  `nim_anggota` varchar(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`id_buku`) REFERENCES `buku`(`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (`nim_anggota`) REFERENCES `anggota`(`nim`) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
 ";
 
 if ($conn->multi_query($sql)) {

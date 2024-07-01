@@ -124,7 +124,7 @@
               <!-- /Logo -->
               <h4 class="mb-2" style="font-size: 18px; color: #7284e3;">Selamat Datang !</h4>
               <p class="mb-4"style="font-size: 14px">Silahkan Masukan Username Dan Password Anda.</p>
-              <p class="mb-1"style="font-size: 9px; font-style: italic;">Login sebagai admin "admin admin"</p>
+              <p class="mb-1"style="font-size: 9px; font-style: italic;">Login sebagai admin "admin 12345678"</p>
               <p class="mb-1"style="font-size: 9px; font-style: italic;">Login sebagai anggota "nim nim"</p>
 
               <form id="formAuthentication" class="mb-3" action="<?=baseURL?>/login/authenticate" method="POST">

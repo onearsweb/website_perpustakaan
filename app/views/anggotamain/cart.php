@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="../../assets/"
+<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="<?= baseURL; ?>/assets/"
   data-template="vertical-menu-template-free">
 
 <head>
@@ -10,7 +10,7 @@
   <meta name="description" content="" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="../style/assets/img/favicon/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="<?= baseURL; ?>/assets/img/favicon/favicon.ico" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,30 +20,30 @@
     rel="stylesheet" />
 
   <!-- Icons. Uncomment required icon fonts -->
-  <link rel="stylesheet" href="../../style/assets/vendor/fonts/boxicons.css" />
+  <link rel="stylesheet" href="<?= baseURL; ?>/assets/vendor/fonts/boxicons.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 
   <!-- Core CSS -->
-  <link rel="stylesheet" href="../../style/assets/vendor/css/core.css" class="template-customizer-core-css" />
-  <link rel="stylesheet" href="../../style/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-  <link rel="stylesheet" href="../../style/assets/css/demo.css" />
+  <link rel="stylesheet" href="<?= baseURL; ?>/assets/vendor/css/core.css" class="template-customizer-core-css" />
+  <link rel="stylesheet" href="<?= baseURL; ?>/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+  <link rel="stylesheet" href="<?= baseURL; ?>/assets/css/demo.css" />
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
   <!-- Vendors CSS -->
-  <link rel="stylesheet" href="../../style/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+  <link rel="stylesheet" href="<?= baseURL; ?>/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
-  <link rel="stylesheet" href="../../style/assets/vendor/libs/apex-charts/apex-charts.css" />
+  <link rel="stylesheet" href="<?= baseURL; ?>/assets/vendor/libs/apex-charts/apex-charts.css" />
 
   <!-- Page CSS -->
 
   <!-- Helpers -->
-  <script src="../../style/assets/vendor/js/helpers.js"></script>
+  <script src="<?= baseURL; ?>/assets/vendor/js/helpers.js"></script>
 
   <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
   <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-  <script src="../../style/assets/js/config.js"></script>
+  <script src="<?= baseURL; ?>/assets/js/config.js"></script>
 </head>
 
 <body>
@@ -112,14 +112,14 @@
         <ul class="menu-inner py-1">
           <!-- Dashboard -->
           <li class="menu-item active">
-            <a href="daftar_buku.php" class="menu-link">
+            <a href="<?= baseURL; ?>/anggotacontrollers/index" class="menu-link">
               <i class="menu-icon tf-icons bx bx-detail"></i>
               <div data-i18n="Analytics">Daftar Buku</div>
             </a>
           </li>
 
           <li class="menu-item">
-            <a href="Pengembalian.php" class="menu-link">
+            <a href="<?= baseURL; ?>/anggotacontrollers/pengembalian" class="menu-link">
               <i class="menu-icon tf-icons bx bx-dock-top"></i>
               <div data-i18n="Tables">Pengembalian</div>
             </a>
@@ -156,19 +156,16 @@
             <ul class="navbar-nav flex-row align-items-center ms-auto">
               <!-- Place this tag where you want the button to render. -->
               <li class="nav-item lh-1 me-3">
-                <a class="custom-button" href="halaman_wishlist.php">
-                  <i class="fa-solid fa-book"></i> Wishlist
+                <a class="custom-button" href="<?= baseURL; ?>/cartcontrollers/index">
+                  <i class="fa-solid fa-book"></i> Cart
                 </a>
               </li>
-
-
-
 
               <!-- User -->
               <li class="nav-item navbar-dropdown dropdown-user dropdown">
                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                   <div class="avatar avatar-online">
-                    <img src="../../style/assets/img/avatars/2.png" alt class="w-px-40 h-auto rounded-circle" />
+                    <img src="<?= baseURL; ?>/assets/img/avatars/2.png" alt class="w-px-40 h-auto rounded-circle" />
                   </div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
@@ -177,11 +174,11 @@
                       <div class="d-flex">
                         <div class="flex-shrink-0 me-3">
                           <div class="avatar avatar-online">
-                            <img src="..../style/assets/img/avatars/2.png" alt class="w-px-40 h-auto rounded-circle" />
+                            <img src="<?= baseURL; ?>/assets/img/avatars/2.png" alt class="w-px-40 h-auto rounded-circle" />
                           </div>
                         </div>
                         <div class="flex-grow-1">
-                          <span class="fw-semibold d-block">wildaa</span>
+                          <span class="fw-semibold d-block"><?php echo $data['nama']; ?></span>
                           <small class="text-muted">Anggota</small>
                         </div>
                       </div>
@@ -206,7 +203,7 @@
                     <div class="dropdown-divider"></div>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="auth-login-basic.html">
+                    <a class="dropdown-item" href="<?= baseURL; ?>/login/logout">
                       <i class="bx bx-power-off me-2"></i>
                       <span class="align-middle">Log Out</span>
                     </a>
@@ -218,169 +215,99 @@
           </div>
         </nav>
         <!-- Content wrapper -->
-        <div class="content-wrapper">
-          <!-- Content -->
+<div class="content-wrapper">
+    <!-- Content -->
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <h4 class="fw-bold py-3 mb-4">Daftar Cart</h4>
 
-          <div class="container-xxl flex-grow-1 container-p-y">
-            <h4 class="fw-bold py-3 mb-4">Daftar Wishlist</h4>
-
-            <!-- Table HTML -->
-            <div class="row mb-5">
-                <div class="col-md-12">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                    <th style="padding-right: 20px;">Gambar</th>
-                    <th>Penulis</th>
-                    <th>Judul</th>
-                    <th>Halaman</th>
-                    <th>Deskripsi</th>
-                    </tr>
+        <div class="row mb-5">
+            <div class="col-md-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="padding-right: 20px;">Gambar</th>
+                            <th>Penulis</th>
+                            <th>Judul</th>
+                            <th>Tanggal Peminjaman</th>
+                            <th>Tanggal Pengembalian</th>
+                            <th>Jumlah Pinjam</th>
+                            <th style="padding-right: 20px;">Aksi</th>
+                        </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td style="position: relative; padding-right: 20px;">
-                                <div style="position: absolute; top: 50%; left: 0; transform: translateY(-50%);">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="wishlistCheckbox" onclick="showPinjamButton()">
-                                        <label class="form-check-label" for="wishlistCheckbox"></label>
+                        <?php foreach ($data['cart'] as $item) : ?>
+                            <tr>
+                                <td style="position: relative; padding-right: 20px;">
+                                    <div style="position: absolute; top: 50%; left: 0; transform: translateY(-50%);">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="wishlistCheckbox" onclick="showPinjamButton()">
+                                            <label class="form-check-label" for="wishlistCheckbox"></label>
+                                        </div>
                                     </div>
-                                </div>
-                                <img src="../../style/assets/img/book/1.png" alt="Card image cap" style="width: 100px;">
-                            </td>
-                            <td>Marchella. Fp</td>
-                            <td>Tabi</td>
-                            <td>125 hal</td>
-                            <td>Some quick example text to build on the card title and make up the bulk of the card's content.</td>
-                            <td></td> <!-- Leave this column empty for the checkbox -->
-                        </tr>
-                        <tr>
-                            <td style="position: relative; padding-right: 20px;">
-                                <div style="position: absolute; top: 50%; left: 0; transform: translateY(-50%);">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="wishlistCheckbox" onclick="showPinjamButton()">
-                                        <label class="form-check-label" for="wishlistCheckbox"></label>
+                                    <img src="<?= baseURL; ?>/assets/img/book/<?= $item['buku'][0]['gambar']; ?>" alt="Card image cap" style="width: 100px;">
+                                </td>
+                                <td style="vertical-align: middle; " >
+                                    <?= htmlspecialchars($item['buku'][0]['author']); ?>
+                                </td>
+                                <td style="vertical-align: middle; " >
+                                  <?= htmlspecialchars($item['buku'][0]['judul']); ?>
+                                </td>
+                                <td style="vertical-align: middle; " >
+                                    <div class="mb-3">
+                                        <label for="tanggalPinjam<?= $item['id_buku']; ?>" class="form-label"></label>
+                                        <input type="date" class="form-control" id="tanggalPinjam<?= $item['id_buku']; ?>" name="tgl_pinjam" value="<?= date('Y-m-d'); ?>" readonly required>
                                     </div>
-                                </div>
-                                <img src="../../style/assets/img/book/2.png" alt="Card image cap" style="width: 100px;">
-                            </td>
-                            <td>Marchella. Fp</td>
-                            <td>Tabi</td>
-                            <td>125 hal</td>
-                            <td>Some quick example text to build on the card title and make up the bulk of the card's content.</td>
-                            <td></td> <!-- Leave this column empty for the checkbox -->
-                        </tr>
-                        <tr>
-                            <td style="position: relative; padding-right: 20px;">
-                                <div style="position: absolute; top: 50%; left: 0; transform: translateY(-50%);">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="wishlistCheckbox" onclick="showPinjamButton()">
-                                        <label class="form-check-label" for="wishlistCheckbox"></label>
+                                </td>
+                                <td style="vertical-align: middle; " >
+                                    <div class="mb-3">
+                                        <label for="tanggalKembali<?= $item['id_buku']; ?>" class="form-label"></label>
+                                        <input type="date" class="form-control" id="tanggalKembali<?= $item['id_buku']; ?>" name="tenggat_pengembalian" min="<?= date('Y-m-d'); ?>" required>
                                     </div>
-                                </div>
-                                <img src="../../style/assets/img/book/3.png" alt="Card image cap" style="width: 100px;">
-                            </td>
-                            <td>Marchella. Fp</td>
-                            <td>Tabi</td>
-                            <td>125 hal</td>
-                            <td>Some quick example text to build on the card title and make up the bulk of the card's content.</td>
-                            <td></td> <!-- Leave this column empty for the checkbox -->
-                        </tr>
-                        <tr>
-                            <td style="position: relative; padding-right: 20px;">
-                                <div style="position: absolute; top: 50%; left: 0; transform: translateY(-50%);">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="wishlistCheckbox" onclick="showPinjamButton()">
-                                        <label class="form-check-label" for="wishlistCheckbox"></label>
+                                </td>
+                                <td style="vertical-align: middle; " >
+                                    <div class="mb-3">
+                                        <label for="jumlahPinjam<?= $item['id_buku']; ?>" class="form-label"></label>
+                                        <?php $book = $item['buku'][0]; // Ambil buku pertama dari array ?>
+                                        <?php if ($book['stok'] > 0) : ?>
+                                            <input type="number" class="form-control" id="jumlahPinjam<?= $item['id_buku']; ?>" name="jumlah_pinjam" required min="1" max="<?= $book['stok']; ?>">
+                                        <?php else : ?>
+                                            <input type="number" class="form-control" id="jumlahPinjam<?= $item['id_buku']; ?>" name="jumlah_pinjam" required min="1" max="0" readonly>
+                                        <?php endif; ?>
                                     </div>
-                                </div>
-                                <img src="../../style/assets/img/book/4.png" alt="Card image cap" style="width: 100px;">
-                            </td>
-                            <td>Marchella. Fp</td>
-                            <td>Tabi</td>
-                            <td>125 hal</td>
-                            <td>Some quick example text to build on the card title and make up the bulk of the card's content.</td>
-                            <td></td> <!-- Leave this column empty for the checkbox -->
-                        </tr>
-                        <tr>
-                            <td style="position: relative; padding-right: 20px;">
-                                <div style="position: absolute; top: 50%; left: 0; transform: translateY(-50%);">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="wishlistCheckbox" onclick="showPinjamButton()">
-                                        <label class="form-check-label" for="wishlistCheckbox"></label>
-                                    </div>
-                                </div>
-                                <img src="../../style/assets/img/book/5.png" alt="Card image cap" style="width: 100px;">
-                            </td>
-                            <td>Marchella. Fp</td>
-                            <td>Tabi</td>
-                            <td>125 hal</td>
-                            <td>Some quick example text to build on the card title and make up the bulk of the card's content.</td>
-                            <td></td> <!-- Leave this column empty for the checkbox -->
-                        </tr>
-                        <tr>
-                            <td style="position: relative; padding-right: 20px;">
-                                <div style="position: absolute; top: 50%; left: 0; transform: translateY(-50%);">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="wishlistCheckbox" onclick="showPinjamButton()">
-                                        <label class="form-check-label" for="wishlistCheckbox"></label>
-                                    </div>
-                                </div>
-                                <img src="../../style/assets/img/book/6.png" alt="Card image cap" style="width: 100px;">
-                            </td>
-                            <td>Marchella. Fp</td>
-                            <td>Tabi</td>
-                            <td>125 hal</td>
-                            <td>Some quick example text to build on the card title and make up the bulk of the card's content.</td>
-                            <td></td> <!-- Leave this column empty for the checkbox -->
-                        </tr>
+                                </td>
+                                <td style="vertical-align: middle; text-align: center;">
+                                  <button type="button" class="btn btn-danger btn-sm" onclick="hapusItemCart(<?= $item['id']; ?>)">Hapus</button>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
         </div>
+
         <!-- Table HTML -->
         <div class="d-flex">
-        <button type="button" class="btn btn-outline-primary custom-btn ms-auto" data-bs-toggle="modal" data-bs-target="#pinjamModal">Pinjam</button>
+            <button type="button" class="btn btn-outline-primary custom-btn ms-auto" data-bs-toggle="modal" data-bs-target="#pinjamModal">Pinjam</button>
         </div>
-          <!-- Modal -->
-        <div class="modal fade" id="pinjamModal" tabindex="-1" aria-labelledby="pinjamModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="pinjamModalLabel">Pinjam Buku Ini</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <form action="" method="" id="pinjamForm">
-                  <div class="mb-3">
-                    <label for="namaBuku" class="form-label">Nama Buku</label>
-                    <input type="text" class="form-control" id="namaBuku" value="Tabi" required readonly>
-                  </div>
-                  <div class="mb-3">
-                    <label for="penulisBuku" class="form-label">Penulis Buku</label>
-                    <input type="text" class="form-control" id="penulisBuku" value="Marchella" required readonly>
-                  </div>
-                  <div class="mb-3">
-                    <label for="tanggalPinjam" class="form-label">Tanggal Peminjaman</label>
-                    <input type="date" class="form-control" id="tanggalPinjam" required>
-                  </div>
-                  <div class="mb-3">
-                    <label for="tanggalKembali" class="form-label">Tanggal Pengembalian</label>
-                    <input type="date" class="form-control" id="tanggalKembali" required>
-                  </div>
-                </form>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                <button type="button" class="btn btn-primary" id="submitPinjam">Pinjam</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Modal -->
 
-        <div class="content-backdrop fade"></div>
-      </div>
+        <!-- Modal Peminjaman -->
+        <div class="modal fade" id="pinjamModal" tabindex="-1" aria-labelledby="pinjamModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="pinjamModalLabel">Konfirmasi Peminjaman</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Anda akan meminjam buku-buku dalam cart. Lanjutkan?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                        <button type="button" class="btn btn-primary" onclick="prosesPeminjaman()">Ya, Pinjam</button>
+                    </div>
+                </div>
+            </div>
+        </div>
       <!-- Content wrapper -->
     </div>
     <!-- / Layout page -->
@@ -392,22 +319,22 @@
   <!-- / Layout wrapper -->
   <!-- Core JS -->
   <!-- build:js assets/vendor/js/core.js -->
-  <script src="../../style/assets/vendor/libs/jquery/jquery.js"></script>
-  <script src="../../style/assets/vendor/libs/popper/popper.js"></script>
-  <script src="../../style/assets/vendor/js/bootstrap.js"></script>
-  <script src="../../style/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+  <script src="<?= baseURL; ?>/assets/vendor/libs/jquery/jquery.js"></script>
+  <script src="<?= baseURL; ?>/assets/vendor/libs/popper/popper.js"></script>
+  <script src="<?= baseURL; ?>/assets/vendor/js/bootstrap.js"></script>
+  <script src="<?= baseURL; ?>/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 
-  <script src="../../style/assets/vendor/js/menu.js"></script>
+  <script src="<?= baseURL; ?>/assets/vendor/js/menu.js"></script>
   <!-- endbuild -->
 
   <!-- Vendors JS -->
-  <script src="../../style/assets/vendor/libs/apex-charts/apexcharts.js"></script>
+  <script src="<?= baseURL; ?>/assets/vendor/libs/apex-charts/apexcharts.js"></script>
 
   <!-- Main JS -->
-  <script src="../../style/assets/js/main.js"></script>
+  <script src="<?= baseURL; ?>/assets/js/main.js"></script>
 
   <!-- Page JS -->
-  <script src="../../style/assets/js/dashboards-analytics.js"></script>
+  <script src="<?= baseURL; ?>/assets/js/dashboards-analytics.js"></script>
 
   <!-- Place this tag in your head or just before your close body tag. -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -429,6 +356,41 @@
       var myModal = new bootstrap.Modal(document.getElementById('pinjamModal'));
       myModal.hide();
     });
+
+    function hapusItemCart(itemId) {
+        // Konfirmasi pengguna sebelum menghapus item
+        if (confirm('Anda yakin ingin menghapus item ini dari cart?')) {
+            // Implementasi untuk menghapus item dari cart
+            console.log('Hapus item dengan id: ' + itemId);
+            
+            // Ajax request untuk menghapus item dari cart
+            $.ajax({
+                url: '<?= baseURL; ?>/cartcontrollers/removeCartItem/' + itemId,
+                type: 'POST',
+                success: function(response) {
+                    // Tambahkan logika atau manipulasi DOM setelah berhasil menghapus item
+                    console.log('Item berhasil dihapus dari cart.');
+                    // Misalnya, refresh halaman atau update tampilan cart
+                    window.location.reload(); // Contoh: refresh halaman setelah menghapus item
+                },
+                error: function(xhr, status, error) {
+                    // Tangani error jika terjadi
+                    console.error('Terjadi error saat menghapus item dari cart:', error);
+                }
+            });
+        } else {
+            console.log('Batal menghapus item dari cart.');
+            // Tambahan logika jika pengguna membatalkan penghapusan
+        }
+    }
+
+
+    function prosesPeminjaman() {
+      // Implementasi untuk proses peminjaman
+      console.log('Proses peminjaman dari cart');
+      // Tambahkan implementasi untuk mengirim data peminjaman dari cart ke backend
+      // Anda bisa menggunakan Ajax atau form submit untuk mengirim data ini
+    }
   </script>
 
 </body>
