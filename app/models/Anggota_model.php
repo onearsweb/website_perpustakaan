@@ -14,4 +14,27 @@ class Anggota_model{
         $this->db->query('SELECT*FROM '.$this->table);
         return $this->db->resultSet();
     }
+
+    public function getAnggotaById($id)
+    {
+        $this->db->query('SELECT*FROM '. $this->table . ' WHERE nim=:nim');
+        $this->db->bind('nim', $id);
+        return $this->db->single();
+    }
+
+    // Query insert data
+    public function tambahDataAnggota($data)
+    {
+        $query = "INSERT INTO anggota (nim, nama, jk, alamat, no_tlp) VALUES (:nim, :nama, :jk, :alamat, :no_tlp)";
+        $this->db->query($query);
+        $this->db->bind('nim', $data['nim']);
+        $this->db->bind('nama', $data['nama']);
+        $this->db->bind('jk', $data['jk']);
+        $this->db->bind('alamat', $data['alamat']);
+        $this->db->bind('no_tlp', $data['no_tlp']);
+
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
 }
