@@ -214,104 +214,105 @@
             </ul>
           </div>
         </nav>
-        <!-- Content wrapper -->
-<div class="content-wrapper">
-    <!-- Content -->
+        <!-- Content Wrapper -->
+        <div class="content-wrapper">
     <div class="container-xxl flex-grow-1 container-p-y">
         <h4 class="fw-bold py-3 mb-4">Daftar Cart</h4>
 
-        <div class="row mb-5">
-            <div class="col-md-12">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th style="padding-right: 20px;">Gambar</th>
-                            <th>Penulis</th>
-                            <th>Judul</th>
-                            <th>Tanggal Peminjaman</th>
-                            <th>Tanggal Pengembalian</th>
-                            <th>Jumlah Pinjam</th>
-                            <th style="padding-right: 20px;">Aksi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($data['cart'] as $item) : ?>
+        <!-- Form untuk pengiriman data -->
+        <form id="pinjamForm" action="<?=baseURL; ?>/cartcontrollers/prosesPeminjaman" method="POST">
+
+            <div class="row mb-5">
+                <div class="col-md-12">
+                    <table class="table">
+                        <thead>
                             <tr>
-                                <td style="position: relative; padding-right: 20px;">
-                                    <div style="position: absolute; top: 50%; left: 0; transform: translateY(-50%);">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="wishlistCheckbox" onclick="showPinjamButton()">
-                                            <label class="form-check-label" for="wishlistCheckbox"></label>
-                                        </div>
-                                    </div>
-                                    <img src="<?= baseURL; ?>/assets/img/book/<?= $item['buku'][0]['gambar']; ?>" alt="Card image cap" style="width: 100px;">
-                                </td>
-                                <td style="vertical-align: middle; " >
-                                    <?= htmlspecialchars($item['buku'][0]['author']); ?>
-                                </td>
-                                <td style="vertical-align: middle; " >
-                                  <?= htmlspecialchars($item['buku'][0]['judul']); ?>
-                                </td>
-                                <td style="vertical-align: middle; " >
-                                    <div class="mb-3">
-                                        <label for="tanggalPinjam<?= $item['id_buku']; ?>" class="form-label"></label>
-                                        <input type="date" class="form-control" id="tanggalPinjam<?= $item['id_buku']; ?>" name="tgl_pinjam" value="<?= date('Y-m-d'); ?>" readonly required>
-                                    </div>
-                                </td>
-                                <td style="vertical-align: middle; " >
-                                    <div class="mb-3">
-                                        <label for="tanggalKembali<?= $item['id_buku']; ?>" class="form-label"></label>
-                                        <input type="date" class="form-control" id="tanggalKembali<?= $item['id_buku']; ?>" name="tenggat_pengembalian" min="<?= date('Y-m-d'); ?>" required>
-                                    </div>
-                                </td>
-                                <td style="vertical-align: middle; " >
-                                    <div class="mb-3">
-                                        <label for="jumlahPinjam<?= $item['id_buku']; ?>" class="form-label"></label>
-                                        <?php $book = $item['buku'][0]; // Ambil buku pertama dari array ?>
-                                        <?php if ($book['stok'] > 0) : ?>
-                                            <input type="number" class="form-control" id="jumlahPinjam<?= $item['id_buku']; ?>" name="jumlah_pinjam" required min="1" max="<?= $book['stok']; ?>">
-                                        <?php else : ?>
-                                            <input type="number" class="form-control" id="jumlahPinjam<?= $item['id_buku']; ?>" name="jumlah_pinjam" required min="1" max="0" readonly>
-                                        <?php endif; ?>
-                                    </div>
-                                </td>
-                                <td style="vertical-align: middle; text-align: center;">
-                                  <button type="button" class="btn btn-danger btn-sm" onclick="hapusItemCart(<?= $item['id']; ?>)">Hapus</button>
-                                </td>
+                                <th style="padding-right: 20px;">Gambar</th>
+                                <th>Penulis</th>
+                                <th>Judul</th>
+                                <th>Tanggal Peminjaman</th>
+                                <th>Tanggal Pengembalian</th>
+                                <th>Jumlah Pinjam</th>
+                                <th style="padding-right: 20px;">Aksi</th>
                             </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($data['cart'] as $item) : ?>
+                                <tr>
+                                    <td style="padding-right: 20px;">
+                                        <img src="<?= baseURL; ?>/assets/img/book/<?= $item['buku'][0]['gambar']; ?>" alt="Card image cap" style="width: 100px;">
+                                    </td>
+                                    <td style="vertical-align: middle;">
+                                        <?= htmlspecialchars($item['buku'][0]['author']); ?>
+                                    </td>
+                                    <td style="vertical-align: middle;">
+                                        <?= htmlspecialchars($item['buku'][0]['judul']); ?>
+                                    </td>
+                                    <td style="vertical-align: middle;">
+                                        <div class="mb-3">
+                                            <label for="tanggalPinjam<?= $item['id_buku']; ?>" class="form-label"></label>
+                                            <input type="date" class="form-control" id="tanggalPinjam<?= $item['id_buku']; ?>" name="tgl_pinjam<?= $item['id']; ?>" value="<?= date('Y-m-d'); ?>" readonly required>
+                                        </div>
+                                    </td>
+                                    <td style="vertical-align: middle;">
+                                        <div class="mb-3">
+                                            <label for="tanggalKembali<?= $item['id_buku']; ?>" class="form-label"></label>
+                                            <input type="date" class="form-control" id="tanggalKembali<?= $item['id_buku']; ?>" name="tenggat_pengembalian<?= $item['id']; ?>" min="<?= date('Y-m-d'); ?>" required>
+                                        </div>
+                                    </td>
+                                    <td style="vertical-align: middle;">
+                                        <div class="mb-3">
+                                            <label for="jumlahPinjam<?= $item['id_buku']; ?>" class="form-label"></label>
+                                            <?php $book = $item['buku'][0];?>
+                                            <?php if ($book['stok'] > 0) : ?>
+                                                <input type="number" class="form-control" id="jumlahPinjam<?= $item['id_buku']; ?>" name="jumlah_pinjam<?= $item['id']; ?>" required min="1" max="<?= $book['stok']; ?>">
+                                            <?php else : ?>
+                                                <input type="number" class="form-control" id="jumlahPinjam<?= $item['id_buku']; ?>" name="jumlah_pinjam<?= $item['id']; ?>" required min="1" max="0" readonly>
+                                            <?php endif; ?>
+                                        </div>
+                                    </td>
+                                    <td style="vertical-align: middle; text-align: center;">
+                                        <button type="button" class="btn btn-danger btn-sm" onclick="hapusItemCart(<?= $item['id']; ?>)">Hapus</button>
+                                    </td>
+                                </tr>
+
+                                <input type="hidden" name="id_buku[]" value="<?= $item['id_buku']; ?>">
+                                <input type="hidden" name="id[]" value="<?= $item['id']; ?>">
+                                
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
 
-        <!-- Table HTML -->
-        <div class="d-flex">
-            <button type="button" class="btn btn-outline-primary custom-btn ms-auto" data-bs-toggle="modal" data-bs-target="#pinjamModal">Pinjam</button>
-        </div>
+            <div class="d-flex">
+              <button type="button" class="btn btn-outline-primary custom-btn ms-auto" data-bs-toggle="modal" data-bs-target="#pinjamModal" id="pinjamButton">Pinjam</button>
+            </div>
 
-        <!-- Modal Peminjaman -->
-        <div class="modal fade" id="pinjamModal" tabindex="-1" aria-labelledby="pinjamModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="pinjamModalLabel">Konfirmasi Peminjaman</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Anda akan meminjam buku-buku dalam cart. Lanjutkan?</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                        <button type="button" class="btn btn-primary" onclick="prosesPeminjaman()">Ya, Pinjam</button>
+
+            <!-- Modal Peminjaman -->
+            <div class="modal fade" id="pinjamModal" tabindex="-1" aria-labelledby="pinjamModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="pinjamModalLabel">Konfirmasi Peminjaman</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Anda akan meminjam buku-buku dalam cart. Lanjutkan?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                            <button type="submit" class="btn btn-primary">Ya, Pinjam</button> <!-- Mengubah button type menjadi submit untuk mengirim form -->
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-      <!-- Content wrapper -->
+
+        </form> <!-- Menutup form -->
     </div>
-    <!-- / Layout page -->
-  </div>
+</div>
+
 
   <!-- Overlay -->
   <div class="layout-overlay layout-menu-toggle"></div>
@@ -345,52 +346,53 @@
 
     <!-- JS Modal -->
   <script>
-    document.getElementById('submitPinjam').addEventListener('click', function () {
-      // Ambil nilai tanggal peminjaman dan tanggal pengembalian dari form
-      var tanggalPinjam = document.getElementById('tanggalPinjam').value;
-      var tanggalKembali = document.getElementById('tanggalKembali').value;
-
-      // Lakukan apa pun yang perlu dilakukan dengan data ini, misalnya validasi atau pengiriman ke server
-
-      // Tutup modal setelah selesai
-      var myModal = new bootstrap.Modal(document.getElementById('pinjamModal'));
-      myModal.hide();
+    document.addEventListener("DOMContentLoaded", function() {
+      // Cek apakah ada elemen dalam keranjang
+      var itemsCount = <?= count($data['cart']); ?>;
+      if (itemsCount === 0) {
+          document.getElementById('pinjamButton').style.display = 'none'; // Sembunyikan tombol "Pinjam"
+      }
     });
 
     function hapusItemCart(itemId) {
-        // Konfirmasi pengguna sebelum menghapus item
         if (confirm('Anda yakin ingin menghapus item ini dari cart?')) {
-            // Implementasi untuk menghapus item dari cart
             console.log('Hapus item dengan id: ' + itemId);
-            
-            // Ajax request untuk menghapus item dari cart
             $.ajax({
                 url: '<?= baseURL; ?>/cartcontrollers/removeCartItem/' + itemId,
                 type: 'POST',
                 success: function(response) {
-                    // Tambahkan logika atau manipulasi DOM setelah berhasil menghapus item
                     console.log('Item berhasil dihapus dari cart.');
-                    // Misalnya, refresh halaman atau update tampilan cart
-                    window.location.reload(); // Contoh: refresh halaman setelah menghapus item
+                    window.location.reload();
                 },
                 error: function(xhr, status, error) {
-                    // Tangani error jika terjadi
                     console.error('Terjadi error saat menghapus item dari cart:', error);
                 }
             });
         } else {
             console.log('Batal menghapus item dari cart.');
-            // Tambahan logika jika pengguna membatalkan penghapusan
         }
     }
 
-
     function prosesPeminjaman() {
-      // Implementasi untuk proses peminjaman
-      console.log('Proses peminjaman dari cart');
-      // Tambahkan implementasi untuk mengirim data peminjaman dari cart ke backend
-      // Anda bisa menggunakan Ajax atau form submit untuk mengirim data ini
-    }
+    $.ajax({
+        type: 'POST',
+        url: '<?= baseURL; ?>/cartcontrollers/prosesPeminjaman',
+        data: f,
+        processData: false,
+        contentType: false,
+        success: function(response) {
+            // Logika setelah sukses memproses peminjaman
+            console.log('Peminjaman berhasil diproses.');
+            window.location = '<?= baseURL; ?>/cartcontrollers/prosesPeminjaman'; // Refresh halaman setelah peminjaman
+        },
+        error: function(xhr, status, error) {
+            // Tangani error jika terjadi
+            console.error('Terjadi error saat memproses peminjaman:', error);
+        }
+    });
+}
+
+
   </script>
 
 </body>

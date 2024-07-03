@@ -1,6 +1,7 @@
 <?php
 require_once '../app/models/Buku.php';
 require_once '../app/models/Pengembalian.php';
+require_once '../app/models/Pinjam.php';
 require_once '../app/models/Anggota.php';
 require_once '../app/models/Cart.php';
 // Start session if not already started
@@ -11,11 +12,11 @@ if (session_status() == PHP_SESSION_NONE) {
 class CartControllers extends Controller
 {
     private $cartModel;
-    // private $bookModel;
+    private $pinjamModel;
     public function __construct()
     {
         $this->cartModel = new Cart();
-        // $this->bookModel = new Buku(); 
+        $this->pinjamModel = new Pinjam();
     }
 
     public function index()
@@ -26,28 +27,16 @@ class CartControllers extends Controller
 
         $cartItems = $this->cartModel->getCartItems($nim);
 
-        // Initialize an empty array to hold all cart items
         $data['cart'] = [];
-
-        // Fetch the details of each book in the cart
         foreach ($cartItems as $item) {
             $book = $bukuModel->getBuku($item['id_buku']);
-            
-            // Append the book details to the cart item
             $item['buku'] = $book;
-
-            // Push the updated item to the cart array
             $data['cart'][] = $item;
         }
 
         $data['nama'] = $anggotaModel->getNamaAnggotaByNim($nim);
-        // echo '<pre>';
-        // print_r($data);
-        // echo '</pre>';
-
         $this->view('anggotamain/cart', $data);
     }
-
 
 
     public function addToCart($id)
@@ -56,41 +45,42 @@ class CartControllers extends Controller
             'nim_anggota' => $_SESSION['user_nim'],
             'id_buku' =>$id,
         ];
-
         $this->cartModel->addToCart($data);
     }
 
-    public function updateCartItem($id)
-    {
-        $data = [
-            'tanggal_pinjam' => $_POST['tanggal_pinjam'],
-            'tanggal_kembali' => $_POST['tanggal_kembali'],
-            'jumlah_pinjam' => $_POST['jumlah_pinjam']
-        ];
 
-        $this->cartModel->updateCartItem($id, $data);
-        header('Location: ' . baseURL . '/CartController');
+    public function prosesPeminjaman() {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id_buku = $_POST['id_buku'];
+            $id = $_POST['id']; 
+            $tgl_pinjam = array();
+            $tenggat_pengembalian = array();
+            $jumlah_pinjam = array();
+        
+            foreach ($id as $index => $id_cart) {
+                $id_book = isset($id_buku[$index]) ? $id_buku[$index] : null;
+                $nim_anggota = isset($_SESSION['user_nim']) ? trim($_SESSION['user_nim']) : null;
+                $tgl_pinjam = isset($_POST['tgl_pinjam' . $id_cart]) ? $_POST['tgl_pinjam' . $id_cart] : null;
+                $tenggat_pengembalian = isset($_POST['tenggat_pengembalian' . $id_cart]) ? $_POST['tenggat_pengembalian' . $id_cart] : null;
+                $jumlah_pinjam = isset($_POST['jumlah_pinjam' . $id_cart]) ? $_POST['jumlah_pinjam' . $id_cart] : null;
+            
+                if ($id_book && $nim_anggota && $tgl_pinjam && $tenggat_pengembalian && $jumlah_pinjam) {
+                    $result = $this->pinjamModel->pinjamBuku($id_book, $nim_anggota, $tgl_pinjam, $tenggat_pengembalian, $jumlah_pinjam);
+                    if ($result) {
+                        $this->removeCartItem($id_cart);
+                    } else {
+                        header("Location: " . baseURL . "/cartcontrollers/index");
+                    }
+                } else {
+                    header("Location: " . baseURL . "/cartcontrollers/index");
+                }
+            }
+        }
     }
 
     public function removeCartItem($id)
     {
         $this->cartModel->removeCartItem($id);
-        header('Location: ' . baseURL . '/CartController');
-    }
-
-    public function checkout()
-    {
-        $user_nim = $_SESSION['user_nim'];
-        $cart_items = $this->cartModel->getCartItems($user_nim);
-
-        foreach ($cart_items as $item) {
-            // Process the checkout (e.g., create a new loan entry)
-            // Your checkout logic here...
-        }
-
-        // Clear the cart after checkout
-        $this->cartModel->clearCart($user_nim);
-
-        header('Location: ' . baseURL . '/CartController');
+        header('Location: ' . baseURL . '/anggotacontrollers/pengembalian');
     }
 }
