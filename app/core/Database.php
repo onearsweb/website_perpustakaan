@@ -76,6 +76,12 @@ class Database{
         return $this->stmt->fetch(PDO::FETCH_ASSOC);
     }
 
+    // Return nilai baris databse
+    public function rowCount()
+    {
+        return $this->stmt->rowCount();
+    }
+
     public function error() {
         return $this->stmt->errorInfo();
     }
