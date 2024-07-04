@@ -22,4 +22,12 @@ class Anggota extends Controller{
             exit;
         }
     }
+
+    // Function Query Delete
+    public function hapusAnggota($nim){
+        if ($this->model('Anggota_model')->hapusDataAnggota($nim) > 0) {
+            header('Location: ' . baseURL . '/buku');
+            exit;
+        }
+    }
 }

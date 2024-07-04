@@ -37,4 +37,15 @@ class Anggota_model{
 
         return $this->db->rowCount();
     }
+
+    // Method Hapus Data Buku
+    public function hapusDataAnggota($nim){
+        $query = "DELETE FROM anggota WHERE nim = :nim";
+        $this->db->query($query);
+        $this->db->bind('nim', $nim);
+
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
 }
