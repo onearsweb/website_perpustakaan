@@ -25,7 +25,7 @@
       <div class="modal-body">
 
         <!-- Form Tambah Buku -->
-        <form action="<?= baseURL; ?>/buku/tambah" method="post">
+        <form action="<?= baseURL; ?>/buku/tambahBuku" method="post">
         
           <div class="form-group">
             <label for="judul">Judul</label>

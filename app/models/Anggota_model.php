@@ -15,10 +15,10 @@ class Anggota_model{
         return $this->db->resultSet();
     }
 
-    public function getAnggotaById($id)
+    public function getAnggotaById($nim)
     {
         $this->db->query('SELECT*FROM '. $this->table . ' WHERE nim=:nim');
-        $this->db->bind('nim', $id);
+        $this->db->bind('nim', $nim);
         return $this->db->single();
     }
 

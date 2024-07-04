@@ -8,15 +8,15 @@ class Anggota extends Controller{
         $this->view('templates/footer');
     }
 
-    public function detail($id) {
+    public function detail($nim) {
         $data['title'] = "Data Anggota";
-        $data['anggota'] = $this->model('Anggota_model')->getAnggotaById($id);
+        $data['anggota'] = $this->model('Anggota_model')->getAnggotaById($nim);
         $this->view('templates/header', $data);
         $this->view('anggota/detail', $data);
         $this->view('templates/footer');
     }
 
-    public function tambah() {
+    public function tambahAnggota() {
         if ($this->model('Anggota_model')->tambahDataAnggota($_POST) > 0) {
             header('Location: ' . baseURL . '/anggota');
             exit;

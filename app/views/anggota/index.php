@@ -25,11 +25,11 @@
       <div class="modal-body">
 
         <!-- Form Tambah Anggota -->
-        <form action="<?= baseURL; ?>/anggota/tambah" method="post">
+        <form action="<?= baseURL; ?>/anggota/tambahAnggota" method="post">
         
           <div class="form-group">
             <label for="nim">NIM</label>
-            <input type="varchar" class="form-control" id="nim" name="nim" required>
+            <input type="varchar" placeholder="11 Karakter" class="form-control" id="nim" name="nim" required>
           </div>
 
           <div class="form-group">
@@ -52,7 +52,7 @@
 
           <div class="form-group">
             <label for="no_tlp">No Telepon</label>
-            <input type="varchar" class="form-control" id="no_tlp" name="no_tlp" required>
+            <input type="varchar" placeholder="17 Digit" class="form-control" id="no_tlp" name="no_tlp" required>
           </div>
 
           <div class="modal-footer">
