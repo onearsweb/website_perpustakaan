@@ -21,7 +21,7 @@ class Buku_model{
         return $this->db->single();
     }
 
-    // Query insert data
+    // Method Insert Data Buku
     public function tambahDataBuku($data)
     {
         $query = "INSERT INTO buku (judul, rak, stok, status) VALUES (:judul, :rak, :stok, :status)";
@@ -30,6 +30,17 @@ class Buku_model{
         $this->db->bind('rak', $data['rak']);
         $this->db->bind('stok', $data['stok']);
         $this->db->bind('status', $data['status']);
+
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
+
+    // Method Hapus Data Buku
+    public function hapusDataBuku($id){
+        $query = "DELETE FROM buku WHERE id = :id";
+        $this->db->query($query);
+        $this->db->bind('id', $id);
 
         $this->db->execute();
 

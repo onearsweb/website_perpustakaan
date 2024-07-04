@@ -17,8 +17,17 @@ class Buku extends Controller {
         $this->view('templates/footer');
     }
 
+    // Function Query Insert
     public function tambahBuku() {
         if ($this->model('Buku_model')->tambahDataBuku($_POST) > 0) {
+            header('Location: ' . baseURL . '/buku');
+            exit;
+        }
+    }
+
+    // Function Query Delete
+    public function hapusBuku($id){
+        if ($this->model('Buku_model')->hapusDataBuku($id) > 0) {
             header('Location: ' . baseURL . '/buku');
             exit;
         }

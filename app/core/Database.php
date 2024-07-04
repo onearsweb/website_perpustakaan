@@ -62,7 +62,7 @@ class Database{
         $this->stmt->execute();
     }
 
-    // Menampilkan Seluruh Dat
+    // Menampilkan Seluruh Data
     public function resultSet()
     {
         $this->execute();
