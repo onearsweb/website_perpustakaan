@@ -40,4 +40,15 @@ class AnggotaControllers extends Controller {
 
         $this->view('anggotamain/detail_buku', $data);
     }
+
+    public function rak($rak) {
+        $nim = $_SESSION['user_nim'];
+
+        $bukuModel = new Buku();
+        $anggotaModel = new Anggota();
+        $data['buku'] = $bukuModel->getRak($rak);
+        $data['nama'] = $anggotaModel->getNamaAnggotaByNim($nim);
+
+        $this->view('anggotamain/daftar_buku', $data);
+    }
 }

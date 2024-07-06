@@ -269,6 +269,18 @@
       
             <div class="container mt-5">
               <div class="row mb-5">
+                <!-- Dropdown Filter Rak -->
+                <div class="col-12 mb-3">
+                  <label for="filterRak" class="form-label">Rak:</label>
+                  <select id="filterRak" class="form-select" onchange="filterRak()">
+                    <option value="">Pilih Rak</option>
+                    <option value="A">Rak A</option>
+                    <option value="B">Rak B</option>
+                    <option value="C">Rak C</option>
+                    <option value="D">Rak D</option>
+                  </select>
+                </div>
+
                 <?php foreach ($data['buku'] as $book) : ?>
                   <div class="col-md-3 mb-3 d-flex">
                     <a href="<?= baseURL; ?>/anggotacontrollers/detailbuku/<?= $book['id']; ?>" class="card-link">
@@ -496,6 +508,13 @@
           };
 
           xhr.send();
+        }
+
+        function filterRak() {
+          var rak = document.getElementById('filterRak').value;
+          if (rak) {
+            window.location.href = '<?= baseURL; ?>/anggotacontrollers/rak/' + rak;
+          }
         }
       </script>
 </body>

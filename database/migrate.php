@@ -35,7 +35,7 @@ CREATE TABLE `buku` (
   `id` int NOT NULL AUTO_INCREMENT,
   `judul` varchar(250) NOT NULL,
   `author` varchar(50) NOT NULL,
-  `kategori` enum('Fantasi','Seni Budaya', 'Anak Anak', 'Pelajaran') NOT NULL,
+  `kategori` enum('Pelajaran','Novel', 'Komik', 'Majalah', 'Filsafat', 'Sejarah', 'Cerpen', 'Kesehatan', 'Sastra', 'Agama', 'Fantasi', 'Anak Anak') NOT NULL,
   `deskripsi` text NOT NULL,
   `gambar` text NOT NULL,
   `rak` enum('A','B','C','D') NOT NULL,

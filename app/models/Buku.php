@@ -19,6 +19,13 @@ class Buku {
         $this->db->bind(':id', $id);
         return $this->db->resultSet();
     }
+
+    public function getRak($rak)
+    {
+        $this->db->query('SELECT*FROM '. $this->table . ' WHERE rak = :rak');
+        $this->db->bind(':rak', $rak);
+        return $this->db->resultSet();
+    }
 }
 
 
