@@ -2,14 +2,6 @@
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formModal">
     Tambah Buku
     </button>
-
-    <select class="form-select" aria-label="Default select example">
-      <option selected>ALL</option>
-      <option value="1">A</option>
-       <option value="2">B</option>
-       <option value="3">C</option>
-       <option value="4">D</option>
-    </select>
     
     <!-- View Data Buku -->
     <h1>Data Buku</h1>
