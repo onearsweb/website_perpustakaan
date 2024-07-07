@@ -10,6 +10,7 @@
                 <?= $anggota['nim']?>
                 <a href="<?= baseURL; ?>/anggota/detail/<?= $anggota['nim']; ?>" class="d-flex justify-content-between align-items-center">Detail</a>
                 <a href="<?= baseURL; ?>/anggota/hapusAnggota/<?= $anggota['nim']; ?>" class="d-flex justify-content-between align-items-center">Hapus</a>
+                <a href="<?= baseURL; ?>/anggota/editAnggota/<?= $anggota['nim']; ?>" class="d-flex justify-content-between align-items-center">Edit</a>
             </li>
         <?php endforeach; ?>
     </ul>
