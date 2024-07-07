@@ -9,7 +9,7 @@
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 <?= $anggota['nim']?>
                 <a href="<?= baseURL; ?>/anggota/detail/<?= $anggota['nim']; ?>" class="d-flex justify-content-between align-items-center">Detail</a>
-                <a href="<?= baseURL; ?>/anggota/hapusAnggota/<?= $anggota['nim']; ?>" class="badge badge-danger float-right">Hapus</a>
+                <a href="<?= baseURL; ?>/anggota/hapusAnggota/<?= $anggota['nim']; ?>" class="d-flex justify-content-between align-items-center">Hapus</a>
             </li>
         <?php endforeach; ?>
     </ul>
