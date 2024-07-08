@@ -18,7 +18,7 @@ if ($conn->query($sqlAdmin) === TRUE) {
 $sqlAnggota = "INSERT INTO anggota (nim, nama, jk, alamat, no_tlp) VALUES 
     ('17221009', 'Rifki Ainul Yaqin', 'pria', 'JL. Antapani GG. Sukapura', 0896),
     ('17223016', 'Reddis Angel', 'wanita', ' Jl.Jatihandap', 0812),
-    ('1722107', 'Yapi', 'pria', 'Jl. Yang Di Ridhoi Allah', 0899),
+    ('17221027', 'Yafi Fahriza Akhsan', 'pria', 'Jl. Yang Di Ridhoi Allah', 0899),
     ('17221028', 'Azilma ny', 'wanita', 'lembang ', 0895),
     ('17223005', 'Wilda Agustina', 'wanita', 'Rancaekek', 0899)";
 
