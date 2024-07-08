@@ -122,7 +122,7 @@
 
               <!-- Admin -->
               <li class="menu-item ">
-                <a href="<?= baseURL; ?>/anggota/anggota" class="menu-link">
+                <a href="<?= baseURL; ?>/anggota/anggota_admin" class="menu-link">
                   <i class="menu-icon bx bxs-user-account"></i>
                   <div data-i18n="Analytics">Admin</div>
                 </a>

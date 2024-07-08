@@ -197,7 +197,7 @@
 
               <!-- Admin -->
               <li class="menu-item ">
-                <a href="<?= baseURL; ?>/anggota/anggota" class="menu-link">
+                <a href="<?= baseURL; ?>/anggota/anggota_admin" class="menu-link">
                   <i class="menu-icon bx bxs-user-account"></i>
                   <div data-i18n="Analytics">Admin</div>
                 </a>
@@ -314,7 +314,7 @@
             <!-- Content -->
             <div class="container-xxl flex-grow-1 container-p-y">
               <h4 class="fw-bold py-3 mb-4">
-                <span class="text-muted fw-light">Anggota/</span> Ubah Data Anggota
+                <span class="text-muted fw-light">Users / Anggota/</span> Ubah Data Anggota
               </h4>
 
               <!-- Layout  -->

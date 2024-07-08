@@ -83,4 +83,15 @@ class Anggota extends Controller {
     public function tambah_buku() {
         $this->view('admin/tambah_buku');
     }
+    public function anggota_admin() {
+        $this->view('admin/anggota_admin');
+    }
+
+    public function tambah_admin() {
+        $this->view('admin/tambah_admin');
+    }
+
+    public function edit_admin() {
+        $this->view('admin/edit_admin');
+    }
 }
