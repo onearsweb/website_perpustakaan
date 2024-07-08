@@ -98,19 +98,38 @@
           </li>
 
           <!-- Buku -->
-          <li class="menu-item">
+          <li class="menu-item active">
             <a href="<?= baseURL; ?>/anggota/buku" class="menu-link">
               <i class="menu-icon bx bxs-book"></i>
               <div data-i18n="Analytics">Buku</div>
             </a>
           </li>
 
-          <!-- Anggota -->
-          <li class="menu-item active">
-            <a href="<?= baseURL; ?>/anggota/anggota" class="menu-link">
-              <i class="menu-icon bx bxs-user-account"></i>
-              <div data-i18n="Analytics">Anggota</div>
+          <!-- Users -->
+          <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+              <i class='menu-icon bx bxs-user'></i>
+              <div data-i18n="Layouts">Users</div>
             </a>
+
+            <ul class="menu-sub">
+              <!-- Anggota -->
+              <li class="menu-item ">
+                <a href="<?= baseURL; ?>/anggota/anggota" class="menu-link">
+                  <i class="menu-icon bx bxs-user-account"></i>
+                  <div data-i18n="Analytics">Anggota</div>
+                </a>
+              </li>
+
+              <!-- Admin -->
+              <li class="menu-item ">
+                <a href="<?= baseURL; ?>/anggota/anggota" class="menu-link">
+                  <i class="menu-icon bx bxs-user-account"></i>
+                  <div data-i18n="Analytics">Admin</div>
+                </a>
+              </li>
+
+            </ul>
           </li>
 
           <!-- Peminjaman -->

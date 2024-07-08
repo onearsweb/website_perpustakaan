@@ -102,7 +102,7 @@
 
         <ul class="menu-inner py-1">
           <!-- Dashboard -->
-          <li class="menu-item">
+          <li class="menu-item active">
             <a href="<?= baseURL; ?>/anggota/dashboard" class="menu-link">
               <i class="menu-icon tf-icons bx bx-home-circle"></i>
               <div data-i18n="Analytics">Dashboard</div>
@@ -117,13 +117,34 @@
             </a>
           </li>
 
-          <!-- Anggota -->
-          <li class="menu-item active">
-            <a href="<?= baseURL; ?>/anggota/anggota" class="menu-link">
-              <i class="menu-icon bx bxs-user-account"></i>
-              <div data-i18n="Analytics">Anggota</div>
+          <!-- Users -->
+          <li class="menu-item ">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+              <i class='menu-icon bx bxs-user'></i>
+              <div data-i18n="Layouts">Users</div>
             </a>
+
+            <ul class="menu-sub">
+              <!-- Anggota -->
+              <li class="menu-item ">
+                <a href="<?= baseURL; ?>/anggota/anggota" class="menu-link">
+                  <i class="menu-icon bx bxs-user-account"></i>
+                  <div data-i18n="Analytics">Anggota</div>
+                </a>
+              </li>
+
+              <!-- Admin -->
+              <li class="menu-item ">
+                <a href="<?= baseURL; ?>/anggota/anggota" class="menu-link">
+                  <i class="menu-icon bx bxs-user-account"></i>
+                  <div data-i18n="Analytics">Admin</div>
+                </a>
+              </li>
+
+            </ul>
           </li>
+
+
 
           <!-- Peminjaman -->
           <li class="menu-item">
@@ -262,6 +283,27 @@
                     <div class="col text-center text-sm-left">
                       <div class="card-body pb-0 px-0 px-md-4">
                         <img src="<?= baseURL; ?>/assets/img/illustrations/anggota.png" height="140" alt="View Badge User" data-app-dark-img="illustrations/man-with-laptop-dark.png" data-app-light-img="illustrations/man-with-laptop-light.png" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Admin -->
+            <div class="col-lg-4 mb-4 order-0">
+              <a href="<?= baseURL; ?>/anggota/anggota_admin">
+                <div class="card">
+                  <div class="d-flex align-items-end row">
+                    <div class="col-sm-9">
+                      <div class="card-body">
+                        <h1 class="card-title text-primary fs-3 fw-bold">Admin</h1>
+                        <span class="text-muted fs-5 fst-italic fw-semibold">5 Terdata</span>
+                      </div>
+                    </div>
+                    <div class="col text-center text-sm-left">
+                      <div class="card-body pb-0 px-0 px-md-4">
+                        <img src="<?= baseURL; ?>/assets/img/illustrations/admin.jpeg" height="140" alt="View Badge User" data-app-dark-img="illustrations/man-with-laptop-dark.png" data-app-light-img="illustrations/man-with-laptop-light.png" />
                       </div>
                     </div>
                   </div>

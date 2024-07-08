@@ -104,12 +104,31 @@
             </a>
           </li>
 
-          <!-- Anggota -->
+          <!-- Users -->
           <li class="menu-item active">
-            <a href="<?= baseURL; ?>/anggota/anggota" class="menu-link">
-              <i class="menu-icon bx bxs-user-account"></i>
-              <div data-i18n="Analytics">Anggota</div>
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+              <i class='menu-icon bx bxs-user'></i>
+              <div data-i18n="Layouts">Users</div>
             </a>
+
+            <ul class="menu-sub">
+              <!-- Anggota -->
+              <li class="menu-item active">
+                <a href="<?= baseURL; ?>/anggota/anggota" class="menu-link">
+                  <i class="menu-icon bx bxs-user-account"></i>
+                  <div data-i18n="Analytics">Anggota</div>
+                </a>
+              </li>
+
+              <!-- Admin -->
+              <li class="menu-item ">
+                <a href="<?= baseURL; ?>/anggota/anggota" class="menu-link">
+                  <i class="menu-icon bx bxs-user-account"></i>
+                  <div data-i18n="Analytics">Admin</div>
+                </a>
+              </li>
+
+            </ul>
           </li>
 
           <!-- Peminjaman -->
