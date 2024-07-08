@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="../../style/assets/" data-template="vertical-menu-template-free">
+<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="<?= baseURL; ?>/assets/" data-template="vertical-menu-template-free">
 
 <head>
   <meta charset="utf-8" />
@@ -12,7 +12,7 @@
   <meta name="description" content="" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="../../style/assets/img/favicon/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="<?= baseURL; ?>/assets/img/favicon/favicon.ico" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,22 +20,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
 
   <!-- Icons. Uncomment required icon fonts -->
-  <link rel="stylesheet" href="../../style/assets/vendor/fonts/boxicons.css" />
+  <link rel="stylesheet" href="<?= baseURL; ?>/assets/vendor/fonts/boxicons.css" />
 
   <!-- Core CSS -->
-  <link rel="stylesheet" href="../../style/assets/vendor/css/core.css" class="template-customizer-core-css" />
-  <link rel="stylesheet" href="../../style/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-  <link rel="stylesheet" href="../../style/assets/css/demo.css" />
+  <link rel="stylesheet" href="<?= baseURL; ?>/assets/vendor/css/core.css" class="template-customizer-core-css" />
+  <link rel="stylesheet" href="<?= baseURL; ?>/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+  <link rel="stylesheet" href="<?= baseURL; ?>/assets/css/demo.css" />
 
   <!-- Vendors CSS -->
-  <link rel="stylesheet" href="../../style/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+  <link rel="stylesheet" href="<?= baseURL; ?>/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
   <!-- Helpers -->
-  <script src="../../style/assets/vendor/js/helpers.js"></script>
+  <script src="<?= baseURL; ?>/assets/vendor/js/helpers.js"></script>
 
   <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
   <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-  <script src="../../style/assets/js/config.js"></script>
+  <script src="<?= baseURL; ?>/assets/js/config.js"></script>
 </head>
 
 <body>
@@ -81,7 +81,7 @@
                 </g>
               </svg>
             </span>
-            <span class="app-brand-text demo menu-text fs-3 fw-bolder ms-2">Perpustakaan</span>
+            <a href="<?= baseURL; ?>/anggota/dashboard"><span class="app-brand-text demo menu-text fs-3 fw-bolder ms-2">Perpustakaan</span></a>
           </a>
           <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
             <i class="bx bx-chevron-left bx-sm align-middle"></i>
@@ -91,23 +91,23 @@
         <ul class="menu-inner py-1">
           <!-- Dashboard -->
           <li class="menu-item">
-            <a href="dashboard.php" class="menu-link">
+            <a href="<?= baseURL; ?>/anggota/dashboard" class="menu-link">
               <i class="menu-icon tf-icons bx bx-home-circle"></i>
               <div data-i18n="Analytics">Dashboard</div>
             </a>
           </li>
 
           <!-- Buku -->
-          <li class="menu-item  active">
-            <a href="buku.php" class="menu-link">
+          <li class="menu-item">
+            <a href="<?= baseURL; ?>/anggota/buku" class="menu-link">
               <i class="menu-icon bx bxs-book"></i>
               <div data-i18n="Analytics">Buku</div>
             </a>
           </li>
 
           <!-- Anggota -->
-          <li class="menu-item">
-            <a href="Anggota.php" class="menu-link">
+          <li class="menu-item active">
+            <a href="<?= baseURL; ?>/anggota/anggota" class="menu-link">
               <i class="menu-icon bx bxs-user-account"></i>
               <div data-i18n="Analytics">Anggota</div>
             </a>
@@ -115,7 +115,7 @@
 
           <!-- Peminjaman -->
           <li class="menu-item">
-            <a href="peminjaman.php" class="menu-link">
+            <a href="<?= baseURL; ?>/anggota/peminjaman" class="menu-link">
               <i class="menu-icon tf-icons bx bx-layout"></i>
               <div data-i18n="Analytics">Peminjaman</div>
             </a>
@@ -150,7 +150,7 @@
                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                   <div class="avatar-online d-flex align-items-center">
                     <span class="me-2 fw-semibold">Reddis Angel</span>
-                    <img src="../../style/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                    <img src="<?= baseURL; ?>/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
                   </div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
@@ -159,7 +159,7 @@
                       <div class="d-flex">
                         <div class="flex-shrink-0 me-3">
                           <div class="avatar-online">
-                            <img src="../../style/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                            <img src="<?= baseURL; ?>/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
                           </div>
                         </div>
                         <div class="flex-grow-1">
@@ -175,7 +175,7 @@
 
                   <!-- Logout -->
                   <li>
-                    <a class="dropdown-item" href="auth-login-basic.php">
+                    <a class="dropdown-item" href="<?= baseURL; ?>/login">
                       <i class="bx bx-power-off me-2"></i>
                       <span class="align-middle">Log Out</span>
                     </a>
@@ -257,26 +257,14 @@
 
                       <!-- Deskripsi Buku -->
                       <div class="row mb-3">
-                          <label
-                            class="col-sm-2 mt-4 form-label"
-                            for="basic-icon-default-message"
-                            >Deskripsi Buku</label
-                          >
-                          <div class="col-sm-10">
-                            <div class="input-group input-group-merge">
-                              <span
-                                id="basic-icon-default-message2"
-                                class="input-group-text"
-                                ><i class='bx bxs-book-reader' ></i></span>
-                              <textarea
-                                id="deskripsi-buku"
-                                name="deskipsi-buku"
-                                class="form-control"
-                                placeholder="Pada Zaman Dahulu..."
-                              ></textarea>
-                            </div>
+                        <label class="col-sm-2 mt-4 form-label" for="basic-icon-default-message">Deskripsi Buku</label>
+                        <div class="col-sm-10">
+                          <div class="input-group input-group-merge">
+                            <span id="basic-icon-default-message2" class="input-group-text"><i class='bx bxs-book-reader'></i></span>
+                            <textarea id="deskripsi-buku" name="deskipsi-buku" class="form-control" placeholder="Pada Zaman Dahulu..."></textarea>
                           </div>
                         </div>
+                      </div>
 
                       <!-- Rak Buku -->
                       <div class="row mb-3">
@@ -353,15 +341,15 @@
 
   <!-- Core JS -->
   <!-- build:js assets/vendor/js/core.js -->
-  <script src="../../style/assets/vendor/libs/jquery/jquery.js"></script>
-  <script src="../../style/assets/vendor/libs/popper/popper.js"></script>
-  <script src="../../style/assets/vendor/js/bootstrap.js"></script>
-  <script src="../../style/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-  <script src="../../style/assets/vendor/js/menu.js"></script>
+  <script src="<?= baseURL; ?>/assets/vendor/libs/jquery/jquery.js"></script>
+  <script src="<?= baseURL; ?>/assets/vendor/libs/popper/popper.js"></script>
+  <script src="<?= baseURL; ?>/assets/vendor/js/bootstrap.js"></script>
+  <script src="<?= baseURL; ?>/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+  <script src="<?= baseURL; ?>/assets/vendor/js/menu.js"></script>
   <!-- endbuild -->
 
   <!-- Main JS -->
-  <script src="../../style/assets/js/main.js"></script>
+  <script src="<?= baseURL; ?>/assets/js/main.js"></script>
 
   <!-- script alert -->
   <script>

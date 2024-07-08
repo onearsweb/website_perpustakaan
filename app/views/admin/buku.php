@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="../../style/assets/" data-template="vertical-menu-template-free">
+<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="<?=baseURL;?>/assets/" data-template="vertical-menu-template-free">
 
 <head>
   <meta charset="utf-8" />
@@ -12,7 +12,7 @@
   <meta name="description" content="" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="../../style/assets/img/favicon/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="<?=baseURL;?>/assets/img/favicon/favicon.ico" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,25 +20,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
 
   <!-- Icons. Uncomment required icon fonts -->
-  <link rel="stylesheet" href="../../style/assets/vendor/fonts/boxicons.css" />
+  <link rel="stylesheet" href="<?=baseURL;?>/assets/vendor/fonts/boxicons.css" />
 
   <!-- Core CSS -->
-  <link rel="stylesheet" href="../../style/assets/vendor/css/core.css" class="template-customizer-core-css" />
-  <link rel="stylesheet" href="../../style/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
-  <link rel="stylesheet" href="../../style/assets/css/demo.css" />
+  <link rel="stylesheet" href="<?=baseURL;?>/assets/vendor/css/core.css" class="template-customizer-core-css" />
+  <link rel="stylesheet" href="<?=baseURL;?>/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+  <link rel="stylesheet" href="<?=baseURL;?>/assets/css/demo.css" />
 
   <!-- Vendors CSS -->
-  <link rel="stylesheet" href="../../style/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+  <link rel="stylesheet" href="<?=baseURL;?>/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
 
   <!-- Page CSS -->
-  <link rel="stylesheet" href="../../style/assets/css/style_admin.css" />
+  <link rel="stylesheet" href="<?=baseURL;?>/assets/css/style_admin.css" />
 
   <!-- Helpers -->
-  <script src="../../style/assets/vendor/js/helpers.js"></script>
+  <script src="<?=baseURL;?>/assets/vendor/js/helpers.js"></script>
 
   <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
   <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-  <script src="../../style/assets/js/config.js"></script>
+  <script src="<?=baseURL;?>/assets/js/config.js"></script>
 </head>
 
 
@@ -84,7 +84,7 @@
                 </g>
               </svg>
             </span>
-            <span class="app-brand-text demo menu-text fs-3 fw-bolder ms-2">Perpustakaan</span>
+            <a href="<?= baseURL; ?>/anggota/dashboard"><span class="app-brand-text demo menu-text fs-3 fw-bolder ms-2">Perpustakaan</span></a> 
           </a>
           <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
             <i class="bx bx-chevron-left bx-sm align-middle"></i>
@@ -101,7 +101,7 @@
             </li>
 
             <!-- Buku -->
-            <li class="menu-item">
+            <li class="menu-item active">
               <a href="<?= baseURL; ?>/anggota/buku" class="menu-link">
                 <i class="menu-icon bx bxs-book"></i>
                 <div data-i18n="Analytics">Buku</div>
@@ -109,7 +109,7 @@
             </li>
 
             <!-- Anggota -->
-            <li class="menu-item active">
+            <li class="menu-item ">
               <a href="<?= baseURL; ?>/anggota/anggota" class="menu-link">
                 <i class="menu-icon bx bxs-user-account"></i>
                 <div data-i18n="Analytics">Anggota</div>
@@ -153,7 +153,7 @@
                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                   <div class="avatar-online d-flex align-items-center">
                     <span class="me-2 fw-semibold">Reddis Angel</span>
-                    <img src="../../style/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                    <img src="<?=baseURL;?>/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
                   </div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
@@ -162,7 +162,7 @@
                       <div class="d-flex">
                         <div class="flex-shrink-0 me-3">
                           <div class="avatar-online">
-                            <img src="../../style/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                            <img src="<?=baseURL;?>/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
                           </div>
                         </div>
                         <div class="flex-grow-1">
@@ -178,7 +178,7 @@
 
                   <!-- Logout -->
                   <li>
-                    <a class="dropdown-item" href="auth-login-basic.php">
+                    <a class="dropdown-item" href="<?= baseURL; ?>/login">
                       <i class="bx bx-power-off me-2"></i>
                       <span class="align-middle">Log Out</span>
                     </a>
@@ -203,7 +203,7 @@
             <div class="card">
               <div class="card-header d-flex align-items-center justify-content-between">
                 <h4>Data Buku</h4>
-                <a href="tambah_buku.php">
+                <a href="<?= baseURL; ?>/anggota/tambah_buku">
                   <button type="button" class="btn btn-primary"><i class='menu-icon bx bxs-book-add'></i> Tambah Buku</button>
                 </a>
               </div>
@@ -235,7 +235,7 @@
                       <td>Rini</td>
                       <td>Fantasi</td>
                       <td class="deskripsi-buku">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, ex.</td>
-                      <td><img class="sampul-buku" src="../../style/assets/img/book/1.png" alt=""></td>
+                      <td><img class="sampul-buku" src="<?=baseURL;?>/assets/img/book/1.png" alt=""></td>
                       <td>A</td>
                       <td>30</td>
                       <td>
@@ -244,7 +244,7 @@
                       <td>
                         <!-- Edit -->
                         <div class="container-act">
-                          <a href="edit_buku.php">
+                          <a href="<?= baseURL; ?>/anggota/edit_buku">
                             <button type="button" class="btn btn-icon btn-info">
                               <span class='bx bx-edit'></span>
                             </button>
@@ -268,7 +268,7 @@
                       <td>Rika</td>
                       <td>Fantasi</td>
                       <td class="deskripsi-buku">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur voluptatibus illum labore. Quo.</td>
-                      <td><img class="sampul-buku" src="../../style/assets/img/book/2.png" alt=""></td>
+                      <td><img class="sampul-buku" src="<?=baseURL;?>/assets/img/book/2.png" alt=""></td>
                       <td>A</td>
                       <td>20</td>
                       <td>
@@ -277,7 +277,7 @@
                       <td>
                         <!-- Edit -->
                         <div class="container-act">
-                          <a href="edit_buku.php">
+                          <a href="<?= baseURL; ?>/anggota/edit_buku">
                             <button type="button" class="btn btn-icon btn-info">
                               <span class='bx bx-edit'></span>
                             </button>
@@ -301,7 +301,7 @@
                       <td>Riza</td>
                       <td>Anak - Anak</td>
                       <td class="deskripsi-buku">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore iste, voluptate a exercitationem soluta omnis!</td>
-                      <td><img class="sampul-buku" src="../../style/assets/img/book/3.png" alt=""></td>
+                      <td><img class="sampul-buku" src="<?=baseURL;?>/assets/img/book/3.png" alt=""></td>
                       <td>C</td>
                       <td>0</td>
                       <td>
@@ -310,7 +310,7 @@
                       <td>
                         <!-- Edit -->
                         <div class="container-act">
-                          <a href="edit_buku.php">
+                          <a href="<?= baseURL; ?>/anggota/edit_buku">
                             <button type="button" class="btn btn-icon btn-info">
                               <span class='bx bx-edit'></span>
                             </button>
@@ -334,7 +334,7 @@
                       <td>Adi</td>
                       <td>Edukasi / Pelajaran</td>
                       <td class="deskripsi-buku">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus quas nobis laborum voluptatum rem ex aut nemo dicta atque, maxime nisi, eveniet, voluptatibus quia est libero! Vitae iure aut saepe.</td>
-                      <td><img class="sampul-buku" src="../../style/assets/img/book/4.png" alt=""></td>
+                      <td><img class="sampul-buku" src="<?=baseURL;?>/assets/img/book/4.png" alt=""></td>
                       <td>A</td>
                       <td>30</td>
                       <td>
@@ -343,7 +343,7 @@
                       <td>
                         <!-- Edit -->
                         <div class="container-act">
-                          <a href="edit_buku.php">
+                          <a href="<?= baseURL; ?>/anggota/edit_buku">
                             <button type="button" class="btn btn-icon btn-info">
                               <span class='bx bx-edit'></span>
                             </button>
@@ -368,7 +368,7 @@
                       <td>Rini</td>
                       <td>Fantasi</td>
                       <td class="deskripsi-buku">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</td>
-                      <td><img class="sampul-buku" src="../../style/assets/img/book/1.png" alt=""></td>
+                      <td><img class="sampul-buku" src="<?=baseURL;?>/assets/img/book/1.png" alt=""></td>
                       <td>A</td>
                       <td>0</td>
                       <td>
@@ -377,7 +377,7 @@
                       <td>
                         <!-- Edit -->
                         <div class="container-act">
-                          <a href="edit_buku.php">
+                          <a href="<?= baseURL; ?>/anggota/edit_buku">
                             <button type="button" class="btn btn-icon btn-info">
                               <span class='bx bx-edit'></span>
                             </button>
@@ -408,18 +408,18 @@
 
       <!-- Core JS -->
       <!-- build:js assets/vendor/js/core.js -->
-      <script src="../../style/assets/vendor/libs/jquery/jquery.js"></script>
-      <script src="../../style/assets/vendor/libs/popper/popper.js"></script>
-      <script src="../../style/assets/vendor/js/bootstrap.js"></script>
-      <script src="../../style/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-      <script src="../../style/assets/vendor/js/menu.js"></script>
+      <script src="<?=baseURL;?>/assets/vendor/libs/jquery/jquery.js"></script>
+      <script src="<?=baseURL;?>/assets/vendor/libs/popper/popper.js"></script>
+      <script src="<?=baseURL;?>/assets/vendor/js/bootstrap.js"></script>
+      <script src="<?=baseURL;?>/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+      <script src="<?=baseURL;?>/assets/vendor/js/menu.js"></script>
       <!-- endbuild -->
 
       <!-- Vendors JS -->
-      <script src="../../style/assets/vendor/libs/masonry/masonry.js"></script>
+      <script src="<?=baseURL;?>/assets/vendor/libs/masonry/masonry.js"></script>
 
       <!-- Main JS -->
-      <script src="../../style/assets/js/main.js"></script>
+      <script src="<?=baseURL;?>/assets/js/main.js"></script>
 
       <!-- script alert -->
       <script>

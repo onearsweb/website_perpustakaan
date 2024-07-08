@@ -4,7 +4,7 @@
   class="light-style layout-menu-fixed"
   dir="ltr"
   data-theme="theme-default"
-  data-assets-path="../../style/assets/"
+  data-assets-path="<?=baseURL;?>/assets/"
   data-template="vertical-menu-template-free"
 >
   <head>
@@ -24,7 +24,7 @@
     <link
       rel="icon"
       type="image/x-icon"
-      href="../../style/assets/img/favicon/favicon.ico"
+      href="<?=baseURL;?>/assets/img/favicon/favicon.ico"
     />
 
     <!-- Fonts -->
@@ -36,33 +36,33 @@
     />
 
     <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="../../style/assets/vendor/fonts/boxicons.css" />
+    <link rel="stylesheet" href="<?=baseURL;?>/assets/vendor/fonts/boxicons.css" />
 
     <!-- Core CSS -->
     <link
       rel="stylesheet"
-      href="../../style/assets/vendor/css/core.css"
+      href="<?=baseURL;?>/assets/vendor/css/core.css"
       class="template-customizer-core-css"
     />
     <link
       rel="stylesheet"
-      href="../../style/assets/vendor/css/theme-default.css"
+      href="<?=baseURL;?>/assets/vendor/css/theme-default.css"
       class="template-customizer-theme-css"
     />
-    <link rel="stylesheet" href="../../style/assets/css/demo.css" />
+    <link rel="stylesheet" href="<?=baseURL;?>/assets/css/demo.css" />
 
     <!-- Vendors CSS -->
     <link
       rel="stylesheet"
-      href="../../style/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css"
+      href="<?=baseURL;?>/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css"
     />
 
     <!-- Helpers -->
-    <script src="../../style/assets/vendor/js/helpers.js"></script>
+    <script src="<?=baseURL;?>/assets/vendor/js/helpers.js"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="../../style/assets/js/config.js"></script>
+    <script src="<?=baseURL;?>/assets/js/config.js"></script>
   </head>
 
   <body>
@@ -152,9 +152,7 @@
                   </g>
                 </svg>
               </span>
-              <span class="app-brand-text demo menu-text fs-3 fw-bolder ms-2"
-                >Perpustakaan</span
-              >
+              <a href="<?= baseURL; ?>/anggota/dashboard"><span class="app-brand-text demo menu-text fs-3 fw-bolder ms-2">Perpustakaan</span></a> 
             </a>
             <a
               href="javascript:void(0);"
@@ -167,7 +165,7 @@
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
             <li class="menu-item">
-              <a href="dashboard.php" class="menu-link">
+              <a href="<?= baseURL; ?>/anggota/dashboard" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
@@ -175,7 +173,7 @@
 
             <!-- Buku -->
             <li class="menu-item">
-              <a href="buku.php" class="menu-link">
+              <a href="<?= baseURL; ?>/anggota/buku" class="menu-link">
                 <i class="menu-icon bx bxs-book"></i>
                 <div data-i18n="Analytics">Buku</div>
               </a>
@@ -183,7 +181,7 @@
 
             <!-- Anggota -->
             <li class="menu-item active">
-              <a href="Anggota.php" class="menu-link">
+              <a href="<?= baseURL; ?>/anggota/anggota" class="menu-link">
                 <i class="menu-icon bx bxs-user-account"></i>
                 <div data-i18n="Analytics">Anggota</div>
               </a>
@@ -191,7 +189,7 @@
 
             <!-- Peminjaman -->
             <li class="menu-item">
-              <a href="peminjaman.php" class="menu-link">
+              <a href="<?= baseURL; ?>/anggota/peminjaman" class="menu-link">
               <i class="menu-icon tf-icons bx bx-layout"></i>
                 <div data-i18n="Analytics">Peminjaman</div>
               </a>
@@ -248,7 +246,7 @@
                     <div class="avatar-online d-flex align-items-center">
                       <span class="me-2 fw-semibold">Reddis Angel</span>
                       <img
-                        src="../../style/assets/img/avatars/1.png"
+                        src="<?=baseURL;?>/assets/img/avatars/1.png"
                         alt
                         class="w-px-40 h-auto rounded-circle"
                       />
@@ -261,7 +259,7 @@
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar-online">
                               <img
-                                src="../../style/assets/img/avatars/1.png"
+                                src="<?=baseURL;?>/assets/img/avatars/1.png"
                                 alt
                                 class="w-px-40 h-auto rounded-circle"
                               />
@@ -279,7 +277,7 @@
 
                     <!-- Logout -->
                     <li>
-                      <a class="dropdown-item" href="auth-login-basic.php">
+                      <a class="dropdown-item" href="<?= baseURL; ?>/login">
                         <i class="bx bx-power-off me-2"></i>
                         <span class="align-middle">Log Out</span>
                       </a>
@@ -458,15 +456,15 @@
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
-    <script src="../../style/assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="../../style/assets/vendor/libs/popper/popper.js"></script>
-    <script src="../../style/assets/vendor/js/bootstrap.js"></script>
-    <script src="../../style/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="../../style/assets/vendor/js/menu.js"></script>
+    <script src="<?=baseURL;?>/assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="<?=baseURL;?>/assets/vendor/libs/popper/popper.js"></script>
+    <script src="<?=baseURL;?>/assets/vendor/js/bootstrap.js"></script>
+    <script src="<?=baseURL;?>/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="<?=baseURL;?>/assets/vendor/js/menu.js"></script>
     <!-- endbuild -->
 
     <!-- Main JS -->
-    <script src="../../style/assets/js/main.js"></script>
+    <script src="<?=baseURL;?>/assets/js/main.js"></script>
 
     <!-- script alert -->
     <script>
