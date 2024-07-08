@@ -176,7 +176,7 @@
           <ul class="menu-inner py-1">
             <!-- Dashboard -->
             <li class="menu-item">
-              <a href="dashboard.php" class="menu-link">
+              <a href="<?= baseURL; ?>/anggota/dashboard" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
@@ -184,7 +184,7 @@
 
             <!-- Buku -->
             <li class="menu-item">
-              <a href="buku.php" class="menu-link">
+              <a href="<?= baseURL; ?>/anggota/buku" class="menu-link">
                 <i class="menu-icon bx bxs-book"></i>
                 <div data-i18n="Analytics">Buku</div>
               </a>
@@ -192,7 +192,7 @@
 
             <!-- Anggota -->
             <li class="menu-item active">
-              <a href="Anggota.php" class="menu-link">
+              <a href="<?= baseURL; ?>/anggota/anggota" class="menu-link">
                 <i class="menu-icon bx bxs-user-account"></i>
                 <div data-i18n="Analytics">Anggota</div>
               </a>
@@ -200,7 +200,7 @@
 
             <!-- Peminjaman -->
             <li class="menu-item">
-              <a href="peminjaman.php" class="menu-link">
+              <a href="<?= baseURL; ?>/anggota/peminjaman" class="menu-link">
               <i class="menu-icon tf-icons bx bx-layout"></i>
                 <div data-i18n="Analytics">Peminjaman</div>
               </a>

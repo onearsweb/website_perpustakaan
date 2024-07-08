@@ -1,4 +1,7 @@
 <?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 class Anggota extends Controller {
     public function index() {
         $data['title'] = "Data Anggota";
@@ -47,5 +50,37 @@ class Anggota extends Controller {
             header('Location: ' . baseURL . '/anggota');
             exit;
         }
+    }
+
+    //Ini nanti hapus aja
+    public function anggota() {
+        $this->view('admin/anggota');
+    }
+
+    public function buku() {
+        $this->view('admin/buku');
+    }
+
+    public function dashboard() {
+        $this->view('admin/dashboard');
+    }
+
+    public function edit_anggota() { 
+        $this->view('admin/edit_anggota');
+    }
+
+    public function edit_buku() {
+        $this->view('admin/edit_buku');
+    }
+
+    public function peminjaman() {
+        $this->view('admin/peminjaman');
+    }
+
+    public function tambah_anggota() {
+        $this->view('admin/tambah_anggota');
+    }
+    public function tambah_buku() {
+        $this->view('admin/tambah_buku');
     }
 }

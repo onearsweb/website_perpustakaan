@@ -28,6 +28,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="<?=baseURL;?>/buku/index">Buku</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?=baseURL;?>/anggota/anggota">Admin</a>
+                        </li>
                     </ul>
                 </div>
             </div>
