@@ -2,19 +2,20 @@
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formModal">
     Tambah Buku
     </button>
-    
     <!-- View Data Buku -->
     <h1>Data Buku</h1>
     <ul class="list-group">
         <?php foreach($data['buku'] as $buku):?>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
+            <li class="list-group-item ">
                 <?= $buku['judul']?>
-                <a href="<?= baseURL; ?>/buku/detail/<?= $buku['id']; ?>" class="d-flex justify-content-between align-items-center">Detail</a>
-                <a href="<?= baseURL; ?>/buku/hapusBuku/<?= $buku['id']; ?>" class="d-flex justify-content-between align-items-center">Hapus</a>
+                <a href="<?= baseURL; ?>/buku/detail/<?= $buku['id']; ?>" class="badge badge-primary float-right">Detail</a>
+                <a href="<?= baseURL; ?>/buku/hapusBuku/<?= $buku['id']; ?>" class="badge badge-danger float-right ml-2">Hapus</a>
+                <a href="<?= baseURL; ?>/buku/editBuku/<?= $buku['id']; ?>" class="badge badge-success float-right ml-2">Edit</a>
             </li>
         <?php endforeach; ?>
     </ul>
 </div>
+
 
 <!-- CRUD Insert Buku -->
 <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
