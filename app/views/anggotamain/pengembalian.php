@@ -258,6 +258,7 @@
                         <th>Penulis</th>
                         <th>Tanggal Pinjam</th>
                         <th>Tenggat</th>
+                        <th>Jumlah</th>
                         <th>Di Kembalikan</th>
                         <th>Status</th>
                         <th>Actions</th>
@@ -267,10 +268,17 @@
                     <?php foreach ($data['pinjam'] as $index => $pinjam) : ?>
                       <tr>
                       <td><?php echo $index + 1; ?></td>
-                        <td><?php echo $pinjam['judul']; ?></td>
+                        <td> 
+                          <?php 
+                            $maxLength = 30;
+                            $judul = $pinjam['judul'];
+                            echo strlen($judul) > $maxLength ? substr($judul, 0, $maxLength) . '...' : $judul;
+                          ?>
+                        </td>
                         <td><?php echo $pinjam['author']; ?></td>
                         <td><?php echo $pinjam['tgl_pinjam']; ?></td>
                         <td><?php echo $pinjam['tenggat_pengembalian']; ?></td>
+                        <td><?php echo $pinjam['jumlah_pinjam']; ?></td>
                         <td><?php echo $pinjam['tgl_kembali']; ?></td>
                         <td><?php echo $pinjam['status']; ?></td>
                         <td>
