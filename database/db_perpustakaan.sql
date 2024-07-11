@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Jul 11, 2024 at 12:35 PM
--- Server version: 8.0.30
--- PHP Version: 8.1.10
+-- Host: 127.0.0.1
+-- Waktu pembuatan: 11 Jul 2024 pada 14.45
+-- Versi server: 10.4.28-MariaDB
+-- Versi PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,18 +24,18 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Struktur dari tabel `admin`
 --
 
 CREATE TABLE `admin` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `nama` varchar(250) NOT NULL,
   `password` varchar(250) NOT NULL,
   `jk` enum('pria','wanita') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `admin`
+-- Dumping data untuk tabel `admin`
 --
 
 INSERT INTO `admin` (`id`, `nama`, `password`, `jk`) VALUES
@@ -44,7 +44,7 @@ INSERT INTO `admin` (`id`, `nama`, `password`, `jk`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `anggota`
+-- Struktur dari tabel `anggota`
 --
 
 CREATE TABLE `anggota` (
@@ -53,10 +53,10 @@ CREATE TABLE `anggota` (
   `jk` enum('pria','wanita') NOT NULL,
   `alamat` text NOT NULL,
   `no_tlp` varchar(17) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `anggota`
+-- Dumping data untuk tabel `anggota`
 --
 
 INSERT INTO `anggota` (`nim`, `nama`, `jk`, `alamat`, `no_tlp`) VALUES
@@ -69,23 +69,23 @@ INSERT INTO `anggota` (`nim`, `nama`, `jk`, `alamat`, `no_tlp`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `buku`
+-- Struktur dari tabel `buku`
 --
 
 CREATE TABLE `buku` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `judul` varchar(250) NOT NULL,
   `author` varchar(50) NOT NULL,
   `kategori` enum('Pelajaran','Novel','Komik','Majalah','Filsafat','Sejarah','Cerpen','Kesehatan','Sastra','Agama','Fantasi','Anak Anak','Autobiography') NOT NULL,
   `deskripsi` text NOT NULL,
   `gambar` text NOT NULL,
   `rak` enum('A','B','C','D') NOT NULL,
-  `stok` int NOT NULL,
+  `stok` int(11) NOT NULL,
   `status` enum('Tersedia','Kosong') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `buku`
+-- Dumping data untuk tabel `buku`
 --
 
 INSERT INTO `buku` (`id`, `judul`, `author`, `kategori`, `deskripsi`, `gambar`, `rak`, `stok`, `status`) VALUES
@@ -97,56 +97,56 @@ INSERT INTO `buku` (`id`, `judul`, `author`, `kategori`, `deskripsi`, `gambar`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cart`
+-- Struktur dari tabel `cart`
 --
 
 CREATE TABLE `cart` (
-  `id` int NOT NULL,
-  `id_buku` int NOT NULL,
+  `id` int(11) NOT NULL,
+  `id_buku` int(11) NOT NULL,
   `nim_anggota` varchar(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pinjam`
+-- Struktur dari tabel `pinjam`
 --
 
 CREATE TABLE `pinjam` (
-  `id` int NOT NULL,
-  `id_buku` int NOT NULL,
+  `id` int(11) NOT NULL,
+  `id_buku` int(11) NOT NULL,
   `nim_anggota` varchar(11) NOT NULL,
   `tgl_pinjam` date NOT NULL,
   `tenggat_pengembalian` date NOT NULL,
   `tgl_kembali` date DEFAULT NULL,
   `status` enum('Dipinjam','Telat','Dikembalikan') NOT NULL,
-  `jumlah_pinjam` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `jumlah_pinjam` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admin`
+-- Indeks untuk tabel `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `anggota`
+-- Indeks untuk tabel `anggota`
 --
 ALTER TABLE `anggota`
   ADD PRIMARY KEY (`nim`);
 
 --
--- Indexes for table `buku`
+-- Indeks untuk tabel `buku`
 --
 ALTER TABLE `buku`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `cart`
+-- Indeks untuk tabel `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`id`),
@@ -154,7 +154,7 @@ ALTER TABLE `cart`
   ADD KEY `nim_anggota` (`nim_anggota`);
 
 --
--- Indexes for table `pinjam`
+-- Indeks untuk tabel `pinjam`
 --
 ALTER TABLE `pinjam`
   ADD PRIMARY KEY (`id`),
@@ -162,46 +162,46 @@ ALTER TABLE `pinjam`
   ADD KEY `nim_anggota` (`nim_anggota`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT untuk tabel `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `buku`
+-- AUTO_INCREMENT untuk tabel `buku`
 --
 ALTER TABLE `buku`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `cart`
+-- AUTO_INCREMENT untuk tabel `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `pinjam`
+-- AUTO_INCREMENT untuk tabel `pinjam`
 --
 ALTER TABLE `pinjam`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `cart`
+-- Ketidakleluasaan untuk tabel `cart`
 --
 ALTER TABLE `cart`
   ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`id_buku`) REFERENCES `buku` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `cart_ibfk_2` FOREIGN KEY (`nim_anggota`) REFERENCES `anggota` (`nim`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `pinjam`
+-- Ketidakleluasaan untuk tabel `pinjam`
 --
 ALTER TABLE `pinjam`
   ADD CONSTRAINT `pinjam_ibfk_1` FOREIGN KEY (`id_buku`) REFERENCES `buku` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
