@@ -92,14 +92,18 @@
             </div>
 
             <!-- Buku -->
-            <div class="col-lg-4 mb-4 order-0">
-              <a href="<?= baseURL; ?>/buku">
-                <div class="card">
+            <div class="col-lg-4 mb-4 order-0">  
+              <a href="<?= baseURL; ?>/buku/index">
+                <div class="card card-equal-height">
                   <div class="d-flex align-items-end row">
                     <div class="col-sm-9">
                       <div class="card-body">
                         <h1 class="card-title text-primary fs-3 fw-bold">Buku</h1>
-                        <span class="text-muted fs-5 fst-italic fw-semibold">1500 Terdata</span>
+                        <span class="text-muted fs-5 fst-italic fw-semibold">DiPinjam   : <?= $data['bukuPinjam'] ?></span>
+                        <br>
+                        <span class="text-muted fs-5 fst-italic fw-semibold">Sisa Buku  : <?= $data['sisaBuku'] ?></span>
+                        <br>
+                        <span class="text-muted fs-5 fst-italic fw-semibold">Total Buku : <?= $data['totalBuku'] ?></span>
                       </div>
                     </div>
                     <div class="col text-center text-sm-left">
@@ -114,13 +118,13 @@
 
             <!-- Anggota -->
             <div class="col-lg-4 mb-4 order-0">
-              <a href="<?= baseURL; ?>/anggota/anggota">
-                <div class="card">
+              <a href="<?= baseURL; ?>/anggota">
+                <div class="card card-equal-height">
                   <div class="d-flex align-items-end row">
                     <div class="col-sm-9">
                       <div class="card-body">
                         <h1 class="card-title text-primary fs-3 fw-bold">Anggota</h1>
-                        <span class="text-muted fs-5 fst-italic fw-semibold">800 Terdata</span>
+                        <span class="text-muted fs-5 fst-italic fw-semibold"><?= $data['totalAnggota'] ?> Terdata</span>
                       </div>
                     </div>
                     <div class="col text-center text-sm-left">
@@ -135,13 +139,14 @@
 
             <!-- Admin -->
             <div class="col-lg-4 mb-4 order-0">
-              <a href="<?= baseURL; ?>/anggota/anggota_admin">
-                <div class="card">
+              <!-- <a href="<?= baseURL; ?>/anggota/anggota_admin"> -->
+              <a href="#">
+                <div class="card card-equal-height">
                   <div class="d-flex align-items-end row">
                     <div class="col-sm-9">
                       <div class="card-body">
                         <h1 class="card-title text-primary fs-3 fw-bold">Admin</h1>
-                        <span class="text-muted fs-5 fst-italic fw-semibold">2 Terdata</span>
+                        <span class="text-muted fs-5 fst-italic fw-semibold">1 Terdata</span>
                       </div>
                     </div>
                     <div class="col text-center text-sm-left">
