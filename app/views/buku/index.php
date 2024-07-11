@@ -16,6 +16,7 @@
                                         <th scope="col">Judul</th>
                                         <th scope="col">Author</th>
                                         <th scope="col">Kategori</th>
+                                        <th scope="col">Rak</th>
                                         <th scope="col">Status</th>
                                         <th scope="col">Aksi</th>
                                     </tr>
@@ -27,6 +28,7 @@
                                             <td><?= $buku['judul']; ?></td>
                                             <td><?= $buku['author']; ?></td>
                                             <td><?= $buku['kategori']; ?></td>
+                                            <td><?= $buku['rak']; ?></td>
                                             <td><?= $buku['status']; ?></td>
                                             <td>
                                                 <a href="<?= baseURL ?>/buku/detail/<?= $buku['id']; ?>" class="btn btn-sm btn-info">Detail</a>
