@@ -14,7 +14,7 @@ class LoginControllers extends Controller {
 
         if ($admin) {
             $_SESSION['user_id'] = $admin['id'];
-            header("Location: " . baseURL . "/anggota");
+            header("Location: " . baseURL . "/home/index");
         } else {
             $anggotaModel = $this->model('Anggota');
             $anggota = $anggotaModel->authenticate($username, $password);

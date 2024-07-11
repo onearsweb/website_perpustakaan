@@ -10,13 +10,13 @@ class Buku_model{
 
     public function getAllBuku()
     {
-        $this->db->query('SELECT*FROM '.$this->table);
+        $this->db->query('SELECT * FROM '.$this->table);
         return $this->db->resultSet();
     }
 
     public function getBukuById($id)
     {
-        $this->db->query('SELECT*FROM '. $this->table . ' WHERE id=:id');
+        $this->db->query('SELECT * FROM '. $this->table . ' WHERE id=:id');
         $this->db->bind('id', $id);
         return $this->db->single();
     }
@@ -24,9 +24,14 @@ class Buku_model{
     // Method Insert Data Buku
     public function tambahDataBuku($data)
     {
-        $query = "INSERT INTO buku (judul, rak, stok, status) VALUES (:judul, :rak, :stok, :status)";
+        $query = "INSERT INTO buku (judul, author, kategori, deskripsi, gambar, rak, stok, status) 
+                  VALUES (:judul, :author, :kategori, :deskripsi, :gambar, :rak, :stok, :status)";
         $this->db->query($query);
         $this->db->bind('judul', $data['judul']);
+        $this->db->bind('author', $data['author']);
+        $this->db->bind('kategori', $data['kategori']);
+        $this->db->bind('deskripsi', $data['deskripsi']);
+        $this->db->bind('gambar', $data['gambar']);
         $this->db->bind('rak', $data['rak']);
         $this->db->bind('stok', $data['stok']);
         $this->db->bind('status', $data['status']);
@@ -68,3 +73,4 @@ class Buku_model{
         return $this->db->rowCount();
     }
 }
+?>
