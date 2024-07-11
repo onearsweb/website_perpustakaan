@@ -9,8 +9,9 @@ class Anggota extends Controller {
     }
 
     public function tambah() {
-        $this->view('templates/header');
-        $this->view('anggota/tambah');
+        $data['title'] = "Tambahin Anggota";
+        $this->view('templates/header', $data);
+        $this->view('anggota/tambah', $data);
         $this->view('templates/footer');
     }
 

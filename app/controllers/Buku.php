@@ -17,7 +17,8 @@ class Buku extends Controller {
     }
 
     public function tambah(){
-        $this->view('templates/header');
+        $data['title'] = "Tambahin Buku";
+        $this->view('templates/header', $data);
         $this->view('buku/tambah', $data);
         $this->view('templates/footer');
     }
