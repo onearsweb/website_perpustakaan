@@ -88,7 +88,7 @@
 
       <ul class="menu-inner py-1">
         <!-- Dashboard -->
-        <li class="menu-item active">
+        <li class="menu-item <?= strpos($_SERVER['REQUEST_URI'], 'home') !== false ? 'active' : '' ?>">
           <a href="<?= baseURL; ?>/home" class="menu-link">
             <i class="menu-icon tf-icons bx bx-home-circle"></i>
             <div data-i18n="Analytics">Dashboard</div>
@@ -96,7 +96,7 @@
         </li>
 
         <!-- Buku -->
-        <li class="menu-item">
+        <li class="menu-item <?= strpos($_SERVER['REQUEST_URI'], 'buku') !== false ? 'active' : '' ?>">
           <a href="<?= baseURL; ?>/buku" class="menu-link">
             <i class="menu-icon bx bxs-book"></i>
             <div data-i18n="Analytics">Buku</div>
@@ -104,15 +104,15 @@
         </li>
 
         <!-- Users -->
-        <li class="menu-item ">
+        <li class="menu-item <?= strpos($_SERVER['REQUEST_URI'], 'anggota') !== false || strpos($_SERVER['REQUEST_URI'], 'admin') !== false ? 'active' : '' ?>">
           <a href="javascript:void(0);" class="menu-link menu-toggle">
             <i class='menu-icon bx bxs-user'></i>
-            <div data-i18n="Layouts">Anggota</div>
+            <div data-i18n="Layouts">Users</div>
           </a>
 
           <ul class="menu-sub">
             <!-- Anggota -->
-            <li class="menu-item ">
+            <li class="menu-item  <?= strpos($_SERVER['REQUEST_URI'], 'anggota') !== false ? 'active' : '' ?>">
               <a href="<?= baseURL; ?>/anggota" class="menu-link">
                 <i class="menu-icon bx bxs-user-account"></i>
                 <div data-i18n="Analytics">Anggota</div>
@@ -120,7 +120,7 @@
             </li>
 
             <!-- Admin -->
-            <li class="menu-item ">
+            <li class="menu-item  <?= strpos($_SERVER['REQUEST_URI'], 'admin') !== false ? 'active' : '' ?>">
               <a href="<?= baseURL; ?>/admin" class="menu-link">
                 <i class="menu-icon bx bxs-user-account"></i>
                 <div data-i18n="Analytics">Admin</div>
@@ -130,7 +130,7 @@
         </li>
 
         <!-- Peminjaman -->
-        <li class="menu-item">
+        <li class="menu-item <?= strpos($_SERVER['REQUEST_URI'], 'pinjam') !== false ? 'active' : '' ?>">
           <a href="<?= baseURL; ?>/pinjam" class="menu-link">
             <i class="menu-icon tf-icons bx bx-layout"></i>
             <div data-i18n="Analytics">Peminjaman</div>
