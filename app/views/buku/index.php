@@ -1,69 +1,42 @@
-<div class="container mt-3">
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formModal">
-    Tambah Buku
-    </button>
-    <!-- View Data Buku -->
-    <h1>Data Buku</h1>
-    <ul class="list-group">
-        <?php foreach($data['buku'] as $buku):?>
-            <li class="list-group-item ">
-                <?= $buku['judul']?>
-                <a href="<?= baseURL; ?>/buku/detail/<?= $buku['id']; ?>" class="d-flex justify-content-between align-items-center">Detail</a>
-                <a href="<?= baseURL; ?>/buku/hapusBuku/<?= $buku['id']; ?>" class="d-flex justify-content-between align-items-center">Hapus</a>
-                <a href="<?= baseURL; ?>/buku/editBuku/<?= $buku['id']; ?>" class="d-flex justify-content-between align-items-center">Edit</a>
-            </li>
-        <?php endforeach; ?>
-    </ul>
-</div>
-
-
-<!-- CRUD Insert Buku -->
-<div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Tambahin Buku</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-
-        <!-- Form Tambah Buku -->
-        <form action="<?= baseURL; ?>/buku/tambahBuku" method="post">
-        
-          <div class="form-group">
-            <label for="judul">Judul</label>
-            <input type="text" class="form-control" id="judul" name="judul" required>
-          </div>
-
-          <div class="form-group">
-            <label for="rak">Rak</label>
-            <select class="form-control" id="rak" name="rak" required>
-              <option value="A">A</option>
-              <option value="B">B</option>
-              <option value="C">C</option>
-              <option value="D">D</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="stok">Stok</label>
-            <input type="number" class="form-control" id="stok" name="stok" required>
-          </div>
-
-          <div class="form-group">
-            <label for="status">Status</label>
-            <select class="form-control" id="status" name="status" required>
-              <option value="Tersedia">Tersedia</option>
-              <option value="Kosong">Kosong</option>
-            </select>
-          </div>
-
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Tambahin</button>
-          </div>
-        </form>
-      </div>
+<div class="layout-wrapper layout-content-navbar">
+    <div class="layout-container">
+        <div class="layout-page">
+            <div class="content-wrapper">
+                <div class="container-xxl flex-grow-1 container-p-y">
+                    <h1>Data Buku</h1>
+                    <!-- Tombol untuk tambah buku -->
+                    <a href="<?= baseURL ?>/buku/tambah" class="btn btn-primary">Tambah Buku</a>
+                    <!-- Tabel untuk menampilkan data buku -->
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Judul</th>
+                                <th scope="col">Author</th>
+                                <th scope="col">Kategori</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($data['buku'] as $buku) : ?>
+                                <tr>
+                                    <td><?= $buku['id']; ?></td>
+                                    <td><?= $buku['judul']; ?></td>
+                                    <td><?= $buku['author']; ?></td>
+                                    <td><?= $buku['kategori']; ?></td>
+                                    <td><?= $buku['status']; ?></td>
+                                    <td>
+                                        <a href="<?= baseURL ?>/buku/detail/<?= $buku['id']; ?>" class="btn btn-sm btn-info">Detail</a>
+                                        <a href="<?= baseURL ?>/buku/edit/<?= $buku['id']; ?>" class="btn btn-sm btn-warning">Edit</a>
+                                        <a href="<?= baseURL ?>/buku/hapusBuku/<?= $buku['id']; ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus buku ini?')">Hapus</a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
