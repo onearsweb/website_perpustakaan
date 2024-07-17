@@ -1,12 +1,12 @@
 # Halo dari Kelompok 1
-Web ini dibangun menggunakan konsep MVC seperti Laravel
+Web ini dibangun menggunakan konsep MVC
 
 ## Teknologi yang digunakan ?
-*PHP
-*JavaScript
-*Bootstrap
-*CSS
-*MySQL
+* PHP
+* JavaScript
+* Bootstrap
+* CSS
+* MySQL
 
 ## Fitur
 1. Login
