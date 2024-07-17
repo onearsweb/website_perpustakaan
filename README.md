@@ -1,7 +1,16 @@
-Anggota Kelompok 1
+# Halo dari Kelompok 1
+Web ini dibangun menggunakan konsep MVC seperti Laravel
 
-Rifki Ainul Yaqin 17221009
-Yafi Fahriza Akhsan 17221027
-Reddis Angel 17223016
-Wilda Agustina 17223005
-Azilma Nuzul Yasinta  17221028
+##Teknologi yang digunakan ?
+*PHP
+*JavaScript
+*Bootstrap
+*CSS
+*MySQL
+
+##Fitur
+1. Login
+2. CRUD untuk Buku, Anggota, dan Transaksi / Peminjaman
+3. Pinjam Buku
+4. Transaksi (Peminjaman dan Pengembalian)
+5. Dashboard (Admin Only)
